@@ -14,4 +14,8 @@
 
 
     <string name="twitterUsername">\@joeytribbiani</string>
+    <string name="lupa_password">Lupa Password</string>
+    <string name="masukkan_password_lama">Password Lama</string>
+    <string name="masukkan_password_baru">Password Baru</string>
+    <string name="konfirmasi_password">Konfirmasi Password</string>
 </resources>
