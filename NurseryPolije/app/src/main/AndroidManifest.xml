@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.LupaPassword"></activity>
         <activity android:name=".LoginActivity" />
         <activity
             android:name=".MainActivity"
