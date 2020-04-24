@@ -49,6 +49,7 @@
         <Button
             android:id="@+id/btnlogin"
             style="@style/loginButton"
+            android:background="@drawable/custombutton"
             android:text="Login"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/loginViewsMargin"/>
