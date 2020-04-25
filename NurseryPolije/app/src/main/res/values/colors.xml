@@ -3,7 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="biru">#6fd1cf</color>
+    <color name="biru">#FF000000</color>
 
     <!--colors for modern ui-->
     <color name="whiteTextColor">#fff</color>

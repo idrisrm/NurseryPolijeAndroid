@@ -19,6 +19,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,12 +34,14 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
-    String Url = "http://192.168.43.243/rest_ci/index.php/kontak";
+    SessionManager sessionManager;
+//    String Url = "http://192.168.43.243/rest_ci/index.php/kontak";
+    String Url = "http://192.168.43.243/yt/login.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_login);
+        sessionManager = new SessionManager(LoginActivity.this);
         requestQueue = Volley.newRequestQueue(LoginActivity.this);
         progressDialog = new ProgressDialog(LoginActivity.this);
         daftar = findViewById(R.id.daftar);
@@ -51,17 +57,17 @@ public class LoginActivity extends AppCompatActivity {
 //            }
 //        });
 //
-//        login.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                cekField();
-//                if (cek){
-//                    loginUser();
-//                }else{
-//                    pesan.setText("Harap Isi Semua Field!");
-//                }
-//            }
-//        });
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cekField();
+                if (cek){
+                    loginUser();
+                }else{
+                    pesan.setText("Harap Isi Semua Field!");
+                }
+            }
+        });
 
 
     }
@@ -110,22 +116,32 @@ public class LoginActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
-                        //menghilangkan progress dialog
-                        progressDialog.dismiss();
+                        try {
 
-                        if (ServerResponse.equalsIgnoreCase("Berhasil")) {
-                            Toast.makeText(LoginActivity.this, "Berhasil Login", Toast.LENGTH_SHORT).show();
+                            //mengambil data pada json
+                            JSONObject jsonObject = new JSONObject(ServerResponse);
+                            String success = jsonObject.getString("success");
+                            JSONArray jsonArray = jsonObject.getJSONArray("login");
 
-//                            finish();
+                            if (success.equals("1")){
+                                for (int i = 0; i<jsonArray.length(); i++){
+                                    JSONObject object = jsonArray.getJSONObject(i);
+                                    String email = object.getString("email").trim();
+                                    String nama = object.getString("nama").trim();
+                                    //membuat session saat berhasil login
+                                    sessionManager.createSession(email);
 
-//                            Intent intent = new Intent(MainActivity.this, BerandaActivity.class);
-//
-//                            intent.putExtra("UserEmailTag", EmailHolder);
-//
-//                            startActivity(intent);
-                        } else {
-                            Toast.makeText(LoginActivity.this, ServerResponse, Toast.LENGTH_SHORT).show();
-                            pesan.setText(ServerResponse);
+                                    Toast.makeText(LoginActivity.this, "Selamat Datang"+ nama , Toast.LENGTH_SHORT).show();
+                                    finish();
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    startActivity(intent);
+                                    progressDialog.dismiss();
+                                }
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(LoginActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
