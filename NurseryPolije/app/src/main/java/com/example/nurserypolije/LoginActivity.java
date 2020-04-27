@@ -121,6 +121,7 @@ public class LoginActivity extends AppCompatActivity {
                             //mengambil data pada json
                             JSONObject jsonObject = new JSONObject(ServerResponse);
                             String success = jsonObject.getString("success");
+                            String pesan = jsonObject.getString("message");
                             JSONArray jsonArray = jsonObject.getJSONArray("login");
 
                             if (success.equals("1")){
@@ -137,6 +138,9 @@ public class LoginActivity extends AppCompatActivity {
                                     startActivity(intent);
                                     progressDialog.dismiss();
                                 }
+                            }else{
+                                Toast.makeText(LoginActivity.this, pesan.toString(), Toast.LENGTH_SHORT).show();
+                                progressDialog.dismiss();
                             }
 
                         } catch (JSONException e) {
