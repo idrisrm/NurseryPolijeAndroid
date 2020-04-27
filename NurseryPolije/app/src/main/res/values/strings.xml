@@ -18,8 +18,10 @@
     <string name="masukkan_password_lama">Password Lama</string>
     <string name="masukkan_password_baru">Password Baru</string>
     <string name="konfirmasi_password">Konfirmasi Password</string>
+
+
     <string name="regis_nama_hint">Nama Lengkap</string>
-    <string name="regis_alamat_hint">Alamat</string>
+    <string name="regis_notel_hint">No. HP</string>
     <string name="regis_email_hint">Email</string>
     <string name="regis_password1_hint">Password</string>
     <string name="regis_password2_hint">Konfirmasi Password</string>

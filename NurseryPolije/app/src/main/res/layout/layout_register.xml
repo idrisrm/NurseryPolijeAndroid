@@ -25,9 +25,9 @@
             android:hint="@string/regis_nama_hint"
             android:maxLines="1" />
         <EditText
-            android:id="@+id/regis_alamat"
+            android:id="@+id/regis_notel"
             style="@style/modifiedEditText"
-            android:hint="@string/regis_alamat_hint"
+            android:hint="@string/regis_notel_hint"
             android:maxLines="1"/>
 
         <EditText
@@ -59,8 +59,13 @@
             android:textColor="@android:color/holo_red_dark"
             android:textSize="@dimen/newsMoreTextSize" />
 
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
         <Button
-            android:id="@+id/btnlogin"
+            android:id="@+id/btn_regis"
             style="@style/loginButton"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/loginViewsMargin"
