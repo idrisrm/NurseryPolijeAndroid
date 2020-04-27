@@ -60,7 +60,7 @@ public class SessionManager {
 
         editor.clear();
         editor.commit();
-        Intent i = new Intent(context, LoginActivity.class);
+        Intent i = new Intent(context, MainActivity.class);
         context.startActivity(i);
         ((MainActivity) context).finish();
 

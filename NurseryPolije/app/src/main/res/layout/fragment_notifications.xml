@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/grad"
-        android:paddingBottom="20dp">
+        android:paddingBottom="20dp"
+        android:layout_marginBottom="20dp">
 
         <RelativeLayout
             android:id="@+id/imgUser"
@@ -32,7 +33,7 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/tv_name"
+            android:id="@+id/nama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgUser"
@@ -45,10 +46,10 @@
 
 
         <TextView
-            android:id="@+id/tv_address"
+            android:id="@+id/keterangan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_name"
+            android:layout_below="@+id/nama"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif"
             android:text="Bergabung sejak 04 April 2020"
@@ -75,6 +76,7 @@
             android:layout_marginTop="15dp"
             android:adjustViewBounds="true"
             android:scaleType="centerInside"
+            android:id="@+id/setting"
             app:srcCompat="@drawable/ic_setting" />
 
     </RelativeLayout>
@@ -168,20 +170,23 @@
 
 
     <RelativeLayout
+        android:id="@+id/data"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/linlay1">
+        android:layout_below="@+id/linlay1"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="false"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_marginTop="40dp"
+            android:layout_marginRight="30dp"
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -210,6 +215,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/nohp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -239,6 +245,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/alamat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -268,6 +275,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/jk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -296,10 +304,44 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                >
+
+                <Button
+                    android:id="@+id/login"
+                    style="@style/loginButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/custombutton"
+                    android:text="login" />
+
+                <Button
+                    style="@style/loginButton"
+                    android:id="@+id/daftar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/custombutton"
+                    android:text="Daftar" />
+
+                <Button
+                style="@style/loginButton"
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custombutton"
+                android:text="Logout" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </RelativeLayout>
-
 
 </RelativeLayout>

@@ -35,8 +35,8 @@ public class LoginActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     SessionManager sessionManager;
-//    String Url = "http://192.168.43.243/rest_ci/index.php/kontak";
-    String Url = "http://192.168.43.243/yt/login.php";
+    String Url = "http://192.168.43.243/rest_ci/index.php/kontak";
+//    String Url = "http://192.168.43.243/yt/login.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -131,7 +131,7 @@ public class LoginActivity extends AppCompatActivity {
                                     //membuat session saat berhasil login
                                     sessionManager.createSession(email);
 
-                                    Toast.makeText(LoginActivity.this, "Selamat Datang"+ nama , Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginActivity.this, "Selamat Datang "+ nama , Toast.LENGTH_SHORT).show();
                                     finish();
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     startActivity(intent);
@@ -141,7 +141,8 @@ public class LoginActivity extends AppCompatActivity {
 
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(LoginActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Username Atau Password Salah", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
                         }
                     }
                 },
