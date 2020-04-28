@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     SessionManager sessionManager;
-    String Url = "http://192.168.43.243/rest_ci/index.php/kontak";
+    String Url = "http://192.168.43.243/nuporyV2/Justify/rest_ci/index.php/Auth";
 //    String Url = "http://192.168.43.243/yt/login.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,10 +127,11 @@ public class LoginActivity extends AppCompatActivity {
                             if (success.equals("1")){
                                 for (int i = 0; i<jsonArray.length(); i++){
                                     JSONObject object = jsonArray.getJSONObject(i);
-                                    String email = object.getString("email").trim();
+                                    String id = object.getString("id").trim();
                                     String nama = object.getString("nama").trim();
+
                                     //membuat session saat berhasil login
-                                    sessionManager.createSession(email);
+                                    sessionManager.createSession(id, nama);
 
                                     Toast.makeText(LoginActivity.this, "Selamat Datang "+ nama , Toast.LENGTH_SHORT).show();
                                     finish();
@@ -138,14 +139,14 @@ public class LoginActivity extends AppCompatActivity {
                                     startActivity(intent);
                                     progressDialog.dismiss();
                                 }
-                            }else{
+                            } else{
                                 Toast.makeText(LoginActivity.this, pesan.toString(), Toast.LENGTH_SHORT).show();
                                 progressDialog.dismiss();
                             }
 
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(LoginActivity.this, "Username Atau Password Salah", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();
                         }
                     }

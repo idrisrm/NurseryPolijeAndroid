@@ -33,14 +33,14 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/nama"
+            android:id="@+id/namaprofile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgUser"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15sp"
             android:fontFamily="sans-serif-light"
-            android:text="Idris"
+            android:text=""
             android:textColor="@color/white"
             android:textSize="32sp" />
 
@@ -49,7 +49,7 @@
             android:id="@+id/keterangan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/nama"
+            android:layout_below="@+id/namaprofile"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif"
             android:text="Bergabung sejak 04 April 2020"
@@ -199,10 +199,11 @@
                     android:textSize="13sp" />
 
                 <TextView
+                    android:id="@+id/emailprofile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="idristifa@gmail.com"
+                    android:text=""
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -229,10 +230,11 @@
                     android:textSize="13sp" />
 
                 <TextView
+                    android:id="@+id/nohpprofile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="085155173339"
+                    android:text=""
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -259,10 +261,11 @@
                     android:textSize="13sp" />
 
                 <TextView
+                    android:id="@+id/profile_alamat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="Probolinggo"
+                    android:text=""
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -289,10 +292,11 @@
                     android:textSize="13sp" />
 
                 <TextView
+                    android:id="@+id/jkprofile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="laki-Laki"
+                    android:text=""
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
