@@ -22,6 +22,13 @@
         <item name="android:background">@color/loginBkColor</item>
         <item name="android:focusableInTouchMode">true</item>
     </style>
+
+    <style name="homeParent" parent="parent">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/loginBkColor</item>
+        <item name="android:focusableInTouchMode">true</item>
+    </style>
+
     <style name="headerText" parent="parent">
         <item name="android:textSize">@dimen/headerTextSize</item>
         <item name="android:textAlignment">center</item>
@@ -45,8 +52,14 @@
     </style>
     <style name="loginButton" parent="viewParent">
         <!--        <item name="android:background">@drawable/ic_login_bk</item>-->
-        <item name="android:textColor">@color/tombol</item>
+        <item name="android:textColor">@color/warnatexttombol</item>
         <!--        <item name="android:colorBackground">bg</item>-->
         <item name="android:textStyle">bold</item>
     </style>
+
+<!--    <style name="background_pencarian" parent="parent">-->
+<!--        <item name="android:background">#ffffff</item>-->
+<!--        <item name="android:bottomLeftRadius">50dp</item>-->
+<!--        <item name="android:bottomRightRadius">50dp</item>-->
+<!--    </style>-->
 </resources>
