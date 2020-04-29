@@ -40,13 +40,15 @@
             android:id="@+id/regis_password"
             style="@style/modifiedEditText"
             android:layout_height="wrap_content"
-            android:hint="@string/regis_password1_hint"/>
+            android:hint="@string/regis_password1_hint"
+            android:inputType="textPassword"/>
 
         <EditText
             android:id="@+id/regis_konfir_password"
             style="@style/modifiedEditText"
             android:layout_height="wrap_content"
-            android:hint="@string/regis_password2_hint"/>
+            android:hint="@string/regis_password2_hint"
+            android:inputType="textPassword"/>
 
 
         <TextView
@@ -61,6 +63,7 @@
 
         <ProgressBar
             android:id="@+id/loading"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

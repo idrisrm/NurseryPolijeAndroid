@@ -19,6 +19,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.nurserypolije.LoginActivity;
 import com.example.nurserypolije.R;
+import com.example.nurserypolije.RegisterActivity;
 import com.example.nurserypolije.SessionManager;
 
 public class NotificationsFragment extends Fragment {
@@ -68,13 +69,13 @@ TextView keterangan, nama;
             }
         });
 
-//        daftar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(getContext(), LoginActivity.class);
-//                startActivity(i);
-//            }
-//        });
+        daftar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), RegisterActivity.class);
+                startActivity(i);
+            }
+        });
 
         if (sessionManager.isLoggin() == true)
         {
