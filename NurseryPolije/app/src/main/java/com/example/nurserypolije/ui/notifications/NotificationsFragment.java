@@ -118,7 +118,6 @@ public class NotificationsFragment extends Fragment {
             }
         });
 
-
         //pengecekan sudah login atau tidak
         if (sessionManager.isLoggin() == true)
         {
