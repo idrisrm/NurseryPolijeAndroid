@@ -16,18 +16,22 @@
             android:layout_alignParentTop="true">
 
             <LinearLayout
+                android:id="@+id/top"
                 style="@style/parent"
                 android:layout_weight="3"
                 android:background="@drawable/home_shape_bk"
                 android:orientation="vertical">
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textSize="20dp"
-                    android:text="Nursery Polije"/>
+
+                    <TextView
+                        android:id="@+id/judul"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:text="Nursery Polije"/>
+
 
                 <androidx.appcompat.widget.SearchView
                     android:layout_marginTop="25dp"
@@ -47,12 +51,80 @@
         </LinearLayout>
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/kategori"
+        android:layout_below="@+id/pencarian"
+        style="@style/parent">
+
+        <LinearLayout
+            style="@style/parent">
+
+            <HorizontalScrollView
+                android:scrollbars="none"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#7cb9de"
+                        android:background="@drawable/button_kategori"
+                        android:text="Krisan"
+                        />
+
+                    <Button
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#7cb9de"
+                        android:background="@drawable/button_kategori"
+                        android:text="Anggrek"
+                        />
+
+                    <Button
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#7cb9de"
+                        android:background="@drawable/button_kategori"
+                        android:text="Kaktus"
+                        />
+
+                    <Button
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#7cb9de"
+                        android:background="@drawable/button_kategori"
+                        android:text="Mawar"
+                        />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/pencarian"
+        android:layout_below="@+id/kategori"
         android:layout_marginTop="2dp"
         android:focusableInTouchMode="true">
+
 
     </ScrollView>
 

@@ -45,7 +45,7 @@ public class NotificationsFragment extends Fragment {
     RelativeLayout data;
     LinearLayout email, nohp, alamat, jk;
     Button daftar, login, logout;
-    TextView keterangan, namaprofile, emailprofile, nohpprofile, jkprofile;
+    TextView keterangan, namaprofile, emailprofile, nohpprofile, jkprofile, alamatprofile;
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     String Url = "http://192.168.43.243/nuporyV2/Justify/rest_ci/index.php/Profile";
@@ -59,15 +59,15 @@ public class NotificationsFragment extends Fragment {
         progressDialog = new ProgressDialog(getActivity());
         sessionManager = new SessionManager(getActivity());
 
-        //bagian data dinamis dari database
+        //bagian TextView dinamis dari database
         keterangan = root.findViewById(R.id.keterangan);
         namaprofile = root.findViewById(R.id.namaprofile);
         emailprofile = root.findViewById(R.id.emailprofile);
         nohpprofile = root.findViewById(R.id.nohpprofile);
         jkprofile = root.findViewById(R.id.jkprofile);
-//        alamatprofile = root.findViewById(R.id.profile_alamat);
+        alamatprofile = root.findViewById(R.id.profile_alamat);
 
-        //bagian statis
+        //bagian TextView Statis
         email = root.findViewById(R.id.email);
         nohp = root.findViewById(R.id.nohp);
         alamat = root.findViewById(R.id.alamat);
@@ -159,7 +159,7 @@ public class NotificationsFragment extends Fragment {
                                     String namadb = object.getString("nama").trim();
                                     String emaildb = object.getString("email").trim();
                                     String nohpdb = object.getString("no_telepon").trim();
-//                                    String alamatdb = object.getString("alamat").trim();
+                                    String alamatdb = object.getString("alamat").trim();
                                     String jkdb = object.getString("jenis_kelamin").trim();
                                     String ketdb = object.getString("waktu_pembuatan").trim();
 
@@ -168,7 +168,9 @@ public class NotificationsFragment extends Fragment {
                                     emailprofile.setText(emaildb);
                                     nohpprofile.setText(nohpdb);
                                     jkprofile.setText(jkdb);
-//                                    alamatprofile.setText(alamatdb);
+                                    alamatprofile.setText(alamatdb);
+
+                                    //menghilangkan loading
                                     progressDialog.dismiss();
                                 }
                             }else{
