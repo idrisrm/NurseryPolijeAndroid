@@ -14,6 +14,7 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity"/>
+        <activity android:name=".LupaPassword"></activity>
 
         <activity
             android:name=".MainActivity"
