@@ -1,8 +1,10 @@
 package com.example.nurserypolije;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     SessionManager sessionManager;
-    String Url = "http://192.168.43.11/nuporV2/Justify/rest_ci/index/Auth/daftar";
+    String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Auth/daftar";
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -50,26 +52,29 @@ public class RegisterActivity extends AppCompatActivity {
         nomor_telepon = findViewById(R.id.regis_notel);
         email = findViewById(R.id.regis_email);
         password = findViewById(R.id.regis_password);
+        alamat = findViewById(R.id.regis_alamat);
+        jk = findViewById(R.id.regis_jk);
+        pesan = findViewById(R.id.pesan);
         btn_regist = findViewById(R.id.btn_regis);
 
         btn_regist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cekForm();
-                Regist();
-//                cekForm();
-//                if (cek){
-//                    Regist();
-//                } else {
-//                    pesan.setText("Harap Isi Semua Field!");
-//                }
+                cek1();
+                if (cek){
+                    Regist();
+                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                } else {
+                    pesan.setText("Harap Isi Semua Field!");
+                }
             }
         });
 
     }
 
     //cek form kosong atau tidak
-    public void cekForm()
+    public void cek1()
     {
         emailH = email.getText().toString().trim();
         namaH = nama.getText().toString().trim();
@@ -120,11 +125,12 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 })
         {
+            @Override
             protected Map<String, String> getParams(){
                 Map<String, String> params = new HashMap<>();
 
                 params.put("nama", namaH);
-                params.put("email", emailH);
+                params.put("email1", emailH);
                 params.put("nomor_telepon", nomor_teleponH);
                 params.put("jenis_kelamin", jkH);
                 params.put("alamat", alamatH);
