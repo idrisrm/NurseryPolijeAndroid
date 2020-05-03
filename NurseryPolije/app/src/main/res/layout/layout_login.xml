@@ -32,6 +32,7 @@
             android:maxLines="1"
             android:inputType="textPassword"/>
         <TextView
+            android:id="@+id/lupa"
             style="@style/viewParent"
             android:text="Lupa Password?"
             android:textColor="@color/primaryTextColor"

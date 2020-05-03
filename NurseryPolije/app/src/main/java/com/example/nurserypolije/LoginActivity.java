@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
-    TextView daftar, pesan;
+    TextView daftar, pesan, lupa;
     String EmailHolder, PasswordHolder;
     EditText email, password;
     Boolean cek;
@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     SessionManager sessionManager;
-    String Url = "http://192.168.43.243/nuporyV2/Justify/rest_ci/index.php/Auth";
+    String Url = "http://192.168.18.18/nuporyV2/Justify/rest_ci/index.php/Auth";
 //    String Url = "http://192.168.43.243/yt/login.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,15 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.etpassword);
         login = findViewById(R.id.btnlogin);
         pesan = findViewById(R.id.pesan);
+        lupa = findViewById(R.id.lupa);
+
+        lupa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, LupaPassword.class);
+                startActivity(intent);
+            }
+        });
 
 //        daftar.setOnClickListener(new View.OnClickListener() {
 //            @Override
