@@ -35,4 +35,10 @@
     <string name="username">username</string>
     <string name="regis_alamat_hint">Alamat</string>
     <string name="regis_jk_hint">Jenis Kelamin</string>
+
+    <string-array name="jenisKelamin">
+        <item>Jenis Kelamin</item>
+        <item>L</item>
+        <item>P</item>
+    </string-array>
 </resources>
