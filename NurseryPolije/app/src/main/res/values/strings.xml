@@ -26,4 +26,6 @@
     <string name="regis_password1_hint">Password</string>
     <string name="regis_password2_hint">Konfirmasi Password</string>
     <string name="username">username</string>
+    <string name="regis_alamat_hint">Alamat</string>
+    <string name="regis_jk_hint">Jenis Kelamin</string>
 </resources>

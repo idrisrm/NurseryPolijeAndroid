@@ -31,6 +31,18 @@
             android:maxLines="1"/>
 
         <EditText
+            android:id="@+id/regis_alamat"
+            style="@style/modifiedEditText"
+            android:layout_height="wrap_content"
+            android:hint="@string/regis_alamat_hint"/>
+
+        <EditText
+            android:id="@+id/regis_jk"
+            style="@style/modifiedEditText"
+            android:layout_height="wrap_content"
+            android:hint="@string/regis_jk_hint"/>
+
+        <EditText
             android:id="@+id/regis_email"
             style="@style/modifiedEditText"
             android:layout_height="wrap_content"
@@ -43,12 +55,12 @@
             android:hint="@string/regis_password1_hint"
             android:inputType="textPassword"/>
 
-        <EditText
-            android:id="@+id/regis_konfir_password"
-            style="@style/modifiedEditText"
-            android:layout_height="wrap_content"
-            android:hint="@string/regis_password2_hint"
-            android:inputType="textPassword"/>
+<!--        <EditText-->
+<!--            android:id="@+id/regis_konfir_password"-->
+<!--            style="@style/modifiedEditText"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="@string/regis_password2_hint"-->
+<!--            android:inputType="textPassword"/>-->
 
 
         <TextView

@@ -1,10 +1,13 @@
 package com.example.nurserypolije;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,86 +28,111 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText nama, notel, email, password, k_password;
-    private Button btn_regist;
-    private ProgressBar loading;
-    private  static  String URL_REGIST = "http://192.168.43.11/android_nupory/register.php";
+    EditText nama, nomor_telepon, email, password, jk, alamat;
+    TextView pesan;
+    Button btn_regist;
+    Boolean cek;
+    String namaH, nomor_teleponH, emailH, passwordH, jkH, alamatH;
+    ProgressDialog progressDialog;
+    RequestQueue requestQueue;
+    SessionManager sessionManager;
+    String Url = "http://192.168.43.11/nuporV2/Justify/rest_ci/index/Auth/daftar";
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        loading = findViewById(R.id.loading);
+        sessionManager = new SessionManager(RegisterActivity.this);
+        requestQueue = Volley.newRequestQueue(RegisterActivity.this);
+        progressDialog = new ProgressDialog(RegisterActivity.this);
         nama = findViewById(R.id.regis_nama);
-        notel = findViewById(R.id.regis_notel);
+        nomor_telepon = findViewById(R.id.regis_notel);
         email = findViewById(R.id.regis_email);
         password = findViewById(R.id.regis_password);
-        k_password = findViewById(R.id.regis_konfir_password);
         btn_regist = findViewById(R.id.btn_regis);
 
         btn_regist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cekForm();
                 Regist();
+//                cekForm();
+//                if (cek){
+//                    Regist();
+//                } else {
+//                    pesan.setText("Harap Isi Semua Field!");
+//                }
             }
         });
 
     }
 
-    private void Regist(){
-        loading.setVisibility(View.VISIBLE);
-        btn_regist.setVisibility(View.GONE);
+    //cek form kosong atau tidak
+    public void cekForm()
+    {
+        emailH = email.getText().toString().trim();
+        namaH = nama.getText().toString().trim();
+        passwordH = password.getText().toString().trim();
+        nomor_teleponH = nomor_telepon.getText().toString().trim();
+        jkH = jk.getText().toString().trim();
+        alamatH = alamat.getText().toString().trim();
+        if (TextUtils.isEmpty(emailH) || (TextUtils.isEmpty(namaH)) || (TextUtils.isEmpty(passwordH)) || (TextUtils.isEmpty(nomor_teleponH)) || (TextUtils.isEmpty(jkH)) || (TextUtils.isEmpty(alamatH)))
+        {
+            cek = false;
+        }else{
+            cek =  true;
+        }
+    }
 
-        final String nama = this.nama.getText().toString().trim();
-        final String notel = this.notel.getText().toString().trim();
-        final String email = this.email.getText().toString().trim();
-        final String password = this.password.getText().toString().trim();
+    //Registrasi
+    public void Regist(){
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REGIST,
+        //Menampilkan progres dialog
+        progressDialog.setMessage("Tunggu sebentar");
+        progressDialog.show();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                    try {
-                        JSONObject jsonObject = new JSONObject(response);
-                        String success = jsonObject.getString("success");
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String success = jsonObject.getString("success");
+                            String pesan = jsonObject.getString("message");
 
-                        if (success.equals("1")){
-                            Toast.makeText(RegisterActivity.this, "Pendaftaran Berhasil", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, pesan.toString(), Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(RegisterActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
                         }
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        Toast.makeText(RegisterActivity.this, "Pendaftaran Gagal" + e.toString(), Toast.LENGTH_SHORT).show();
-                        loading.setVisibility(View.GONE);
-                        btn_regist.setVisibility(View.VISIBLE);
-                    }
                     }
                 },
+
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(RegisterActivity.this, "Pendaftaran Gagal" + error.toString(), Toast.LENGTH_SHORT).show();
-                        loading.setVisibility(View.GONE);
-                        btn_regist.setVisibility(View.VISIBLE);
+                        progressDialog.dismiss();
 
+                        Toast.makeText(RegisterActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 })
         {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            protected Map<String, String> getParams(){
                 Map<String, String> params = new HashMap<>();
-                params.put("nama", nama);
-                params.put("no_telepon", notel);
-                params.put("email", email);
-                params.put("password", password);
 
-                return super.getParams();
+                params.put("nama", namaH);
+                params.put("email", emailH);
+                params.put("nomor_telepon", nomor_teleponH);
+                params.put("jenis_kelamin", jkH);
+                params.put("alamat", alamatH);
+                params.put("password", passwordH);
+                return params;
             }
         };
-
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        RequestQueue requestQueue = Volley.newRequestQueue(RegisterActivity.this);
         requestQueue.add(stringRequest);
-
     }
 }
