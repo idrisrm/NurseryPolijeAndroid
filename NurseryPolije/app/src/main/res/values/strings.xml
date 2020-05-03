@@ -25,4 +25,11 @@
     <string name="regis_email_hint">Email</string>
     <string name="regis_password1_hint">Password</string>
     <string name="regis_password2_hint">Konfirmasi Password</string>
+
+    <string-array name="settingprofile">
+        <item>Ubah Profile</item>
+        <item>Ubah Password</item>
+    </string-array>
+
+
 </resources>
