@@ -34,6 +34,7 @@ import com.example.nurserypolije.R;
 import com.example.nurserypolije.RegisterActivity;
 import com.example.nurserypolije.SessionManager;
 import com.example.nurserypolije.SettingProfileActivity;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -74,7 +75,7 @@ public class NotificationsFragment extends Fragment {
         alamatprofile = root.findViewById(R.id.profile_alamat);
 
         //bagian foto
-
+        fotoProfile = root.findViewById(R.id.foto);
 
         //bagian TextView Statis
         email = root.findViewById(R.id.email);
@@ -175,6 +176,7 @@ public class NotificationsFragment extends Fragment {
 
 
 //                                    Glide.with(getActivity()).load(urlfoto).into(fotoProfile);
+                                    Picasso.get().load(urlfoto).into(fotoProfile);
 
                                     namaprofile.setText(namadb);
                                     emailprofile.setText(emaildb);
