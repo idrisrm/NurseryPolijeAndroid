@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +32,8 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText nama, nomor_telepon, email, password, jk, alamat;
+    EditText nama, nomor_telepon, email, password, alamat;
+    Spinner jk;
     TextView pesan;
     Button btn_regist;
     Boolean cek;
@@ -71,6 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
     //cek form kosong atau tidak
@@ -80,9 +84,13 @@ public class RegisterActivity extends AppCompatActivity {
         namaH = nama.getText().toString().trim();
         passwordH = password.getText().toString().trim();
         nomor_teleponH = nomor_telepon.getText().toString().trim();
-        jkH = jk.getText().toString().trim();
+        jkH = jk.getSelectedItem().toString().trim();
         alamatH = alamat.getText().toString().trim();
-        if (TextUtils.isEmpty(emailH) || (TextUtils.isEmpty(namaH)) || (TextUtils.isEmpty(passwordH)) || (TextUtils.isEmpty(nomor_teleponH)) || (TextUtils.isEmpty(jkH)) || (TextUtils.isEmpty(alamatH)))
+        if (TextUtils.isEmpty(emailH) || (TextUtils.isEmpty(namaH))
+                || (TextUtils.isEmpty(passwordH))
+                || (TextUtils.isEmpty(nomor_teleponH))
+                || (TextUtils.isEmpty(jkH))
+                || (TextUtils.isEmpty(alamatH)))
         {
             cek = false;
         }else{

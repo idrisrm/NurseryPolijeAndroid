@@ -36,11 +36,13 @@
             android:layout_height="wrap_content"
             android:hint="@string/regis_alamat_hint"/>
 
-        <EditText
+        <Spinner
             android:id="@+id/regis_jk"
-            style="@style/modifiedEditText"
-            android:layout_height="wrap_content"
-            android:hint="@string/regis_jk_hint"/>
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:entries="@array/jenisKelamin">
+        </Spinner>
 
         <EditText
             android:id="@+id/regis_email"
@@ -54,13 +56,6 @@
             android:layout_height="wrap_content"
             android:hint="@string/regis_password1_hint"
             android:inputType="textPassword"/>
-
-<!--        <EditText-->
-<!--            android:id="@+id/regis_konfir_password"-->
-<!--            style="@style/modifiedEditText"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:hint="@string/regis_password2_hint"-->
-<!--            android:inputType="textPassword"/>-->
 
 
         <TextView

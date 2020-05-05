@@ -31,7 +31,7 @@ public class LupaPassword extends AppCompatActivity {
     TextView pesan;
     Button kirim, kembali;
     Boolean cek;
-    String EmailHolder, PasswordHolder;
+    String EmailHolder;
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     SessionManager sessionManager;
@@ -47,7 +47,8 @@ public class LupaPassword extends AppCompatActivity {
         progressDialog = new ProgressDialog(LupaPassword.this);
         Email = findViewById(R.id.emaill);
         kirim = findViewById(R.id.btnkirim);
-        kembali = findViewById(R.id.kembali);
+        kembali = findViewById(R.id.Kemb);
+        pesan = findViewById(R.id.notif);
 
         kembali.setOnClickListener(new View.OnClickListener() {
             @Override

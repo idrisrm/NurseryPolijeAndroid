@@ -19,6 +19,7 @@
         <TextView
             style="@style/headerTextPrimary"
             android:layout_marginTop="@dimen/loginViewsMargin"
+            android:layout_margin="22dp"
             android:text="@string/lupa_password" />
 
         <EditText
@@ -28,15 +29,6 @@
             android:inputType="text"
             android:maxLines="1" />
 
-        <Button
-            android:id="@+id/btnkirim"
-            style="@style/loginButton"
-            android:layout_width="100dp"
-            android:background="@drawable/custombutton"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/loginViewsMargin"
-            android:text="Kirim" />
         <TextView
             style="@style/viewParent"
             android:id="@+id/notif"
@@ -46,6 +38,17 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"/>
 
+        <Button
+            android:id="@+id/btnkirim"
+            style="@style/loginButton"
+            android:layout_width="113dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:background="@drawable/custombutton"
+            android:text="Kirim" />
+
+
         <TextView
             android:id="@+id/tulisan"
             style="@style/viewParent"
@@ -53,19 +56,11 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="anda akan menerima email untuk mengganti password."
+            android:text="Silakan cek email anda untuk mengganti password."
             android:textAlignment="center"
             android:textStyle="bold"
             android:textColor="@color/primaryTextColor" />
 
-        <Button
-            android:id="@+id/kembali"
-            android:background="@drawable/custombutton"
-            style="@style/loginButton"
-            android:layout_width="113dp"
-            android:layout_gravity="right"
-            android:layout_height="wrap_content"
-            android:text="Kembali" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
