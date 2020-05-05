@@ -141,7 +141,7 @@ public class NotificationsFragment extends Fragment {
             nohp.setVisibility(View.GONE);
             alamat.setVisibility(View.GONE);
             jk.setVisibility(View.GONE);
-            keterangan.setText("Anda Belum Login");
+//            keterangan.setText("Anda Belum Login");
         }
 
         return root;
