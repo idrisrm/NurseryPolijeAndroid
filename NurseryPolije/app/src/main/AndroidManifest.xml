@@ -12,11 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UbahPassword"></activity>
-        <activity android:name=".SettingProfileActivity" />
+        <activity android:name=".SettingProfileActivity"></activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LupaPassword" />
+        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".LupaPassword"></activity>
+
         <activity
             android:name=".MainActivity"
             android:label="Nursery Polije">
