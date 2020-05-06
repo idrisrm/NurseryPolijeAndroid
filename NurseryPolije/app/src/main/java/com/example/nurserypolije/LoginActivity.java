@@ -51,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         pesan = findViewById(R.id.pesan);
         lupa = findViewById(R.id.lupa);
 
+        //pindah ke lupa password (lupa password)
         lupa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,13 +60,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-//        daftar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getBaseContext(), MainActivity.class));
-//            }
-//        });
-//
+        //pindah ke register (belum punya akun)
+        daftar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent pindah = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(pindah);
+            }
+        });
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
