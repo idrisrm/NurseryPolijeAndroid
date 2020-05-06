@@ -15,6 +15,7 @@
         <activity android:name=".SettingProfileActivity"></activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity"/>
+        <activity android:name=".UbahProfile"/>
         <activity android:name=".LupaPassword"></activity>
 
         <activity
