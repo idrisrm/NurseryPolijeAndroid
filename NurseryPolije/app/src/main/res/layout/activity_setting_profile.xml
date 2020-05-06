@@ -21,7 +21,8 @@
         android:layout_below="@+id/tv_setting"
         android:id="@+id/listviewsetting"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        />
 
     <Button
         android:layout_below="@+id/listviewsetting"

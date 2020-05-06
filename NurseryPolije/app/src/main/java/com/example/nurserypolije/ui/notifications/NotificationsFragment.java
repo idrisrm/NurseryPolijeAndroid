@@ -7,9 +7,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,14 +42,17 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
 
 public class NotificationsFragment extends Fragment {
-    ImageView keranjang, setting;
-
+    ImageView keranjang, ic_setting;
+    ListView pesanan, fitur_lainnya;
     SessionManager sessionManager;
     RelativeLayout data;
     LinearLayout email, nohp, alamat, jk;
@@ -66,28 +71,56 @@ public class NotificationsFragment extends Fragment {
         progressDialog = new ProgressDialog(getActivity());
         sessionManager = new SessionManager(getActivity());
 
+        //bagina listview pesanan
+        pesanan = root.findViewById(R.id.lv_pesanan);
+        String[] setting = new String[] {
+                "Tagihan",
+                "Dikemas",
+                "Dikirim"
+        };
+        List<String> item = new ArrayList<String>(Arrays.asList(setting));
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
+                (getActivity(), android.R.layout.simple_list_item_1, item);
+
+        pesanan.setAdapter(arrayAdapter);
+
+        //bagian listview fitur
+        fitur_lainnya = root.findViewById(R.id.lv_tambahan);
+        String[] fitur = new String[] {
+                "Lokasi Kami",
+                "Bantuan",
+                "Kritik Dan Saran"
+        };
+        List<String> item1 = new ArrayList<String>(Arrays.asList(fitur));
+
+        ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<String>
+                (getActivity(), android.R.layout.simple_list_item_1, item1);
+
+        fitur_lainnya.setAdapter(arrayAdapter1);
+
         //bagian TextView dinamis dari database
         keterangan = root.findViewById(R.id.keterangan);
         namaprofile = root.findViewById(R.id.namaprofile);
-        emailprofile = root.findViewById(R.id.emailprofile);
-        nohpprofile = root.findViewById(R.id.nohpprofile);
-        jkprofile = root.findViewById(R.id.jkprofile);
-        alamatprofile = root.findViewById(R.id.profile_alamat);
+//        emailprofile = root.findViewById(R.id.emailprofile);
+//        nohpprofile = root.findViewById(R.id.nohpprofile);
+//        jkprofile = root.findViewById(R.id.jkprofile);
+//        alamatprofile = root.findViewById(R.id.profile_alamat);
 
         //bagian foto
         fotoProfile = root.findViewById(R.id.foto);
 
         //bagian TextView Statis
-        email = root.findViewById(R.id.email);
-        nohp = root.findViewById(R.id.nohp);
-        alamat = root.findViewById(R.id.alamat);
-        jk = root.findViewById(R.id.jk);
+//        email = root.findViewById(R.id.email);
+//        nohp = root.findViewById(R.id.nohp);
+//        alamat = root.findViewById(R.id.alamat);
+//        jk = root.findViewById(R.id.jk);
         daftar = root.findViewById(R.id.daftar);
 
         //bagian tombol
         login = root.findViewById(R.id.login);
         keranjang = root.findViewById(R.id.keranjang);
-        setting = root.findViewById(R.id.setting);
+        ic_setting = root.findViewById(R.id.setting);
 
         //mengambil ID dari session manager
         HashMap<String, String> user = sessionManager.getUserDetail();
@@ -102,7 +135,7 @@ public class NotificationsFragment extends Fragment {
         });
 
         //jika setting di pencet
-        setting.setOnClickListener(new View.OnClickListener() {
+        ic_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sessionManager.checkLogin();
@@ -137,10 +170,10 @@ public class NotificationsFragment extends Fragment {
             daftar.setVisibility(View.GONE);
             login.setVisibility(View.GONE);
         }else{
-            email.setVisibility(View.GONE);
-            nohp.setVisibility(View.GONE);
-            alamat.setVisibility(View.GONE);
-            jk.setVisibility(View.GONE);
+//            email.setVisibility(View.GONE);
+//            nohp.setVisibility(View.GONE);
+//            alamat.setVisibility(View.GONE);
+//            jk.setVisibility(View.GONE);
 //            keterangan.setText("Anda Belum Login");
         }
 
@@ -179,10 +212,11 @@ public class NotificationsFragment extends Fragment {
                                     Picasso.get().load(urlfoto).into(fotoProfile);
 
                                     namaprofile.setText(namadb);
-                                    emailprofile.setText(emaildb);
-                                    nohpprofile.setText(nohpdb);
-                                    jkprofile.setText(jkdb);
-                                    alamatprofile.setText(alamatdb);
+                                    keterangan.setText("Bergabung Sejak " + ketdb);
+//                                    emailprofile.setText(emaildb);
+//                                    nohpprofile.setText(nohpdb);
+//                                    jkprofile.setText(jkdb);
+//                                    alamatprofile.setText(alamatdb);
 
                                     //menghilangkan loading
                                     progressDialog.dismiss();
