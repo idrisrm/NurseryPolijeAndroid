@@ -28,9 +28,9 @@ public class SettingProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_profile);
 
-        listView = findViewById(R.id.listviewsetting);
-        adapter = ArrayAdapter.createFromResource(this, R.array.settingprofile, android.R.layout.simple_list_item_1);
-        listView.setAdapter(adapter);
+        // listView = findViewById(R.id.listviewsetting);
+        // adapter = ArrayAdapter.createFromResource(this, R.array.settingprofile, android.R.layout.simple_list_item_1);
+        // listView.setAdapter(adapter);
 
 
         btn_logout = findViewById(R.id.logout);
