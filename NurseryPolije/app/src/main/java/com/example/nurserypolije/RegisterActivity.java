@@ -34,7 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     EditText nama, nomor_telepon, email, password, alamat;
     Spinner jk;
-    TextView pesan;
+    TextView pesan, pindah;
     Button btn_regist;
     Boolean cek;
     String namaH, nomor_teleponH, emailH, passwordH, jkH, alamatH;
@@ -59,6 +59,16 @@ public class RegisterActivity extends AppCompatActivity {
         jk = findViewById(R.id.regis_jk);
         pesan = findViewById(R.id.pesan);
         btn_regist = findViewById(R.id.btn_regis);
+        pindah = findViewById(R.id.daftar);
+
+
+        pindah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent inten = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(inten);
+            }
+        });
 
         btn_regist.setOnClickListener(new View.OnClickListener() {
             @Override
