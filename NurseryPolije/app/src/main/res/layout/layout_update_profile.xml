@@ -35,8 +35,9 @@
     </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_edit"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="343dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="67dp">
 
@@ -117,8 +118,9 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+
         <Spinner
-            android:id="@+id/regis_jk"
+            android:id="@+id/edit_jk"
             android:layout_width="173dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
@@ -128,9 +130,16 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/edit_notel"
             app:layout_constraintTop_toBottomOf="@+id/edit_alamat">
-
         </Spinner>
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_edit"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="162dp"
+        android:text="SIMPAN" />
 </RelativeLayout>
