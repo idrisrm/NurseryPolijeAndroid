@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -26,6 +27,11 @@ public class SettingProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_profile);
+
+        // listView = findViewById(R.id.listviewsetting);
+        // adapter = ArrayAdapter.createFromResource(this, R.array.settingprofile, android.R.layout.simple_list_item_1);
+        // listView.setAdapter(adapter);
+
 
         btn_logout = findViewById(R.id.logout);
         sessionManager = new SessionManager(this);
@@ -65,5 +71,23 @@ public class SettingProfileActivity extends AppCompatActivity {
                 sessionManager.logout();
             }
         });
+
+        listView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        //Jika ubah profil di pencet
+                        if (position == 0) {
+                            //code specific to first list item
+                            Intent i = new Intent(SettingProfileActivity.this, UbahProfile.class);
+                            startActivity(i);
+                        }
+                    }
+                });
+
+
     }
+
+
 }
