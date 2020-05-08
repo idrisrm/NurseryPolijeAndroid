@@ -61,7 +61,7 @@ public class NotificationsFragment extends Fragment {
     TextView keterangan, namaprofile, emailprofile, nohpprofile, jkprofile, alamatprofile;
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
-    String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Profile";
+    String Url = "http://192.168.18.18/nuporyV2/Justify/rest_ci/index.php/Profile";
     String id, urlfoto;
     private NotificationsViewModel notificationsViewModel;
     @BindView(R.id.foto) com.mikhaellopez.circularimageview.CircularImageView fotoProfile;
@@ -72,7 +72,7 @@ public class NotificationsFragment extends Fragment {
         progressDialog = new ProgressDialog(getActivity());
         sessionManager = new SessionManager(getActivity());
 
-        //bagina listview pesanan
+        //bagian listview pesanan
         pesanan = root.findViewById(R.id.lv_pesanan);
         String[] setting = new String[] {
                 "Tagihan",

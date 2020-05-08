@@ -35,6 +35,9 @@
     <string name="username">username</string>
     <string name="regis_alamat_hint">Alamat</string>
     <string name="regis_jk_hint">Jenis Kelamin</string>
+    <string name="password_baru1">Password Baru</string>
+    <string name="password_lama1">Password Lama</string>
+    <string name="konfirmasi_password1">Konfirmasi Password</string>
 
     <string-array name="jenisKelamin">
         <item>Jenis Kelamin</item>
