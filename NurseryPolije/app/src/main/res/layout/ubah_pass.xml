@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/pslama"
+        android:layout_width="254dp"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:inputType="text"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="410dp"
+        style="@style/modifiedEditText"
+        android:layout_marginLeft="50dp"
+        android:hint="@string/password_lama1"/>
+
+
+    <EditText
+        android:id="@+id/psbaru"
+        android:layout_width="254dp"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:inputType="text"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="329dp"
+        android:layout_marginLeft="50dp"
+        style="@style/modifiedEditText"
+        android:hint="@string/password_baru1"/>
+
+    <EditText
+        android:id="@+id/konfir"
+        android:layout_width="254dp"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="249dp"
+        android:ems="10"
+        android:inputType="text"
+        style="@style/modifiedEditText"
+        android:hint="@string/konfirmasi_password1" />
+
+    <TextView
+        style="@style/viewParent"
+        android:id="@+id/pesan"
+        android:text=""
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="@dimen/newsMoreTextSize"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="210dp"/>
+
+    <Button
+        android:id="@+id/simp"
+        android:layout_width="153dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="106dp"
+        android:layout_marginBottom="140dp"
+        android:background="@drawable/custombutton"
+        android:text="Simpan" />
+
+    <Button
+        android:id="@+id/btl"
+        android:layout_width="153dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="106dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/custombutton"
+        android:text="Batal" />
+</RelativeLayout>

@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     SessionManager sessionManager;
-    String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Auth";
+    String Url = "http://192.168.18.18/nuporyV2/Justify/rest_ci/index.php/Auth";
 //    String Url = "http://192.168.43.243/yt/login.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,9 +141,10 @@ public class LoginActivity extends AppCompatActivity {
                                     JSONObject object = jsonArray.getJSONObject(i);
                                     String id = object.getString("id").trim();
                                     String nama = object.getString("nama").trim();
+                                    String email = object.getString("email").trim();
 
                                     //membuat session saat berhasil login
-                                    sessionManager.createSession(id, nama);
+                                    sessionManager.createSession(id, nama, email);
 
                                     Toast.makeText(LoginActivity.this, "Selamat Datang "+ nama , Toast.LENGTH_SHORT).show();
                                     finish();

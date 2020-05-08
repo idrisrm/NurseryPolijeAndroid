@@ -72,7 +72,7 @@ public class NotificationsFragment extends Fragment {
         progressDialog = new ProgressDialog(getActivity());
         sessionManager = new SessionManager(getActivity());
 
-        //bagina listview pesanan
+        //bagian listview pesanan
         pesanan = root.findViewById(R.id.lv_pesanan);
         String[] setting = new String[] {
                 "Tagihan",

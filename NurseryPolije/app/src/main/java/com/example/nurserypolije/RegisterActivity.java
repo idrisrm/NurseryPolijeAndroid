@@ -41,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     SessionManager sessionManager;
-    String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Auth/daftar";
+    String Url = "http://192.168.18.18/nuporyV2/Justify/rest_ci/index.php/Auth/daftar";
 
     @Override
     protected void onCreate(Bundle savedInstanceState){

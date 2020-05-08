@@ -58,6 +58,7 @@ public class SettingProfileActivity extends AppCompatActivity {
 ////                    startActivity(i);
                     Toast.makeText(SettingProfileActivity.this, "Ubah Profile", Toast.LENGTH_SHORT).show();
                 }else if (dipilih == "Ubah Password"){
+
                     Toast.makeText(SettingProfileActivity.this, "Ubah Password", Toast.LENGTH_SHORT).show();
                 }
 
@@ -82,6 +83,9 @@ public class SettingProfileActivity extends AppCompatActivity {
                             //code specific to first list item
                             Intent i = new Intent(SettingProfileActivity.this, UbahProfile.class);
                             startActivity(i);
+                        }else{
+                            Intent a = new Intent(SettingProfileActivity.this, UbahPassword.class);
+                            startActivity(a);
                         }
                     }
                 });
