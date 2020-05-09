@@ -44,4 +44,5 @@
         <item>L</item>
         <item>P</item>
     </string-array>
+    <string name="title_activity_peta_lokasi">Map</string>
 </resources>
