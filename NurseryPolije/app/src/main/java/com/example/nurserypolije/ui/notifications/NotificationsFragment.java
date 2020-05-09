@@ -63,7 +63,7 @@ public class NotificationsFragment extends Fragment {
     TextView keterangan, namaprofile, emailprofile, nohpprofile, jkprofile, alamatprofile;
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
-    String Url = "http://192.168.18.18/nuporyV2/Justify/rest_ci/index.php/Profile";
+    String Url = "http://192.168.43.243/nuporyV2/Justify/rest_ci/index.php/Profile";
     String id, urlfoto;
     private NotificationsViewModel notificationsViewModel;
     @BindView(R.id.foto) com.mikhaellopez.circularimageview.CircularImageView fotoProfile;
