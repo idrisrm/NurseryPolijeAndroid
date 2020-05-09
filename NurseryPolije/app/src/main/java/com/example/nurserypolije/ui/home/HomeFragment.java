@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
 
-    String url = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Beranda";
+    String url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/Beranda";
     RecyclerView.LayoutManager mManager;
     List<ModelHome> mItems;
     RecyclerView recyclerView;

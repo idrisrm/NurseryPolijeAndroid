@@ -135,6 +135,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
+        android:id="@+id/simpan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/layout_edit"
