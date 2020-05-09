@@ -22,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.textfield.TextInputLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -47,7 +48,7 @@ public class UbahProfile extends AppCompatActivity {
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     SessionManager sessionManager;
-    String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Auth/daftar";
+    String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Profile/ubahProfil";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,11 +58,10 @@ public class UbahProfile extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(UbahProfile.this);
         progressDialog = new ProgressDialog(UbahProfile.this);
 
-        nama = findViewById(R.id.regis_nama);
-        nomor_telepon = findViewById(R.id.regis_notel);
-        alamat = findViewById(R.id.regis_alamat);
-        jk = findViewById(R.id.regis_jk);
-        pesan = findViewById(R.id.pesan);
+        nama = findViewById(R.id.edit_nama);
+        nomor_telepon = findViewById(R.id.edit_notel);
+        alamat = findViewById(R.id.edit_alamat);
+        jk = findViewById(R.id.edit_jk);
         simpan = findViewById(R.id.simpan);
 
         //mengambil email dari session manager
