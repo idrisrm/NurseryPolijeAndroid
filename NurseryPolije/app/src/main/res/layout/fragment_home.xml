@@ -1,19 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/homeParent">
 
-    <TextView
-        android:id="@+id/text_home"
+    <RelativeLayout
+        android:id="@+id/pencarian"
+        style="@style/parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+
+            <LinearLayout
+                android:id="@+id/top"
+                style="@style/parent"
+                android:layout_weight="3"
+                android:background="@drawable/home_shape_bk"
+                android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/judul"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:text="Nursery Polije"/>
+
+
+                <androidx.appcompat.widget.SearchView
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/background_pencarian"
+                    android:layout_height="40dp"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    style="@style/parent"
+                    android:layout_height="25dp"
+                    android:contentDescription="login background"
+                    android:layout_width="match_parent" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/kategori"
+        android:layout_below="@+id/pencarian"
+        style="@style/parent">
+
+        <LinearLayout
+            style="@style/parent">
+
+            <HorizontalScrollView
+                android:scrollbars="none"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#7cb9de"
+                        android:background="@drawable/button_kategori"
+                        android:text="Krisan"
+                        />
+
+                    <Button
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#7cb9de"
+                        android:background="@drawable/button_kategori"
+                        android:text="Anggrek"
+                        />
+
+                    <Button
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#7cb9de"
+                        android:background="@drawable/button_kategori"
+                        android:text="Kaktus"
+                        />
+
+                    <Button
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#7cb9de"
+                        android:background="@drawable/button_kategori"
+                        android:text="Mawar"
+                        />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/kategori"
+        android:layout_marginTop="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBunga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                tools:ignore="MissingConstraints"
+                tools:listitem="@layout/item_list_bunga"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

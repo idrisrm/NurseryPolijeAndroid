@@ -25,10 +25,24 @@
             android:hint="@string/regis_nama_hint"
             android:maxLines="1" />
         <EditText
+            android:id="@+id/regis_notel"
+            style="@style/modifiedEditText"
+            android:hint="@string/regis_notel_hint"
+            android:maxLines="1"/>
+
+        <EditText
             android:id="@+id/regis_alamat"
             style="@style/modifiedEditText"
-            android:hint="@string/regis_alamat_hint"
-            android:maxLines="1"/>
+            android:layout_height="wrap_content"
+            android:hint="@string/regis_alamat_hint"/>
+
+        <Spinner
+            android:id="@+id/regis_jk"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:entries="@array/jenisKelamin">
+        </Spinner>
 
         <EditText
             android:id="@+id/regis_email"
@@ -40,13 +54,8 @@
             android:id="@+id/regis_password"
             style="@style/modifiedEditText"
             android:layout_height="wrap_content"
-            android:hint="@string/regis_password1_hint"/>
-
-        <EditText
-            android:id="@+id/regis_konfir_password"
-            style="@style/modifiedEditText"
-            android:layout_height="wrap_content"
-            android:hint="@string/regis_password2_hint"/>
+            android:hint="@string/regis_password1_hint"
+            android:inputType="textPassword"/>
 
 
         <TextView
@@ -59,8 +68,14 @@
             android:textColor="@android:color/holo_red_dark"
             android:textSize="@dimen/newsMoreTextSize" />
 
+        <ProgressBar
+            android:id="@+id/loading"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
         <Button
-            android:id="@+id/btnlogin"
+            android:id="@+id/btn_regis"
             style="@style/loginButton"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/loginViewsMargin"

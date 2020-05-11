@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
-    TextView daftar, pesan;
+    TextView daftar, pesan, lupa;
     String EmailHolder, PasswordHolder;
     EditText email, password;
     Boolean cek;
@@ -35,8 +35,8 @@ public class LoginActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     SessionManager sessionManager;
-//    String Url = "http://192.168.43.243/rest_ci/index.php/kontak";
-    String Url = "http://192.168.43.243/yt/login.php";
+    String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Auth";
+//    String Url = "http://192.168.43.243/yt/login.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,14 +49,26 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.etpassword);
         login = findViewById(R.id.btnlogin);
         pesan = findViewById(R.id.pesan);
+        lupa = findViewById(R.id.lupa);
 
-//        daftar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getBaseContext(), MainActivity.class));
-//            }
-//        });
-//
+        //pindah ke lupa password (lupa password)
+        lupa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, LupaPassword.class);
+                startActivity(intent);
+            }
+        });
+
+        //pindah ke register (belum punya akun)
+        daftar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent pindah = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(pindah);
+            }
+        });
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,27 +133,34 @@ public class LoginActivity extends AppCompatActivity {
                             //mengambil data pada json
                             JSONObject jsonObject = new JSONObject(ServerResponse);
                             String success = jsonObject.getString("success");
+                            String pesan = jsonObject.getString("message");
                             JSONArray jsonArray = jsonObject.getJSONArray("login");
 
                             if (success.equals("1")){
                                 for (int i = 0; i<jsonArray.length(); i++){
                                     JSONObject object = jsonArray.getJSONObject(i);
-                                    String email = object.getString("email").trim();
+                                    String id = object.getString("id").trim();
                                     String nama = object.getString("nama").trim();
-                                    //membuat session saat berhasil login
-                                    sessionManager.createSession(email);
+                                    String email = object.getString("email").trim();
 
-                                    Toast.makeText(LoginActivity.this, "Selamat Datang"+ nama , Toast.LENGTH_SHORT).show();
+                                    //membuat session saat berhasil login
+                                    sessionManager.createSession(id, nama, email);
+
+                                    Toast.makeText(LoginActivity.this, "Selamat Datang "+ nama , Toast.LENGTH_SHORT).show();
                                     finish();
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     startActivity(intent);
                                     progressDialog.dismiss();
                                 }
+                            } else{
+                                Toast.makeText(LoginActivity.this, pesan.toString(), Toast.LENGTH_SHORT).show();
+                                progressDialog.dismiss();
                             }
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                             Toast.makeText(LoginActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
                         }
                     }
                 },
