@@ -71,7 +71,7 @@ public class HomeFragment extends Fragment {
         recyclerView.setAdapter(mAdapter);
 //        dataKosong = root.findViewById(R.id.dataKosong);
 
-//        loadJSON();
+        loadJSON();
 
         return root;
     }
@@ -93,6 +93,8 @@ public class HomeFragment extends Fragment {
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject object = jsonArray.getJSONObject(i);
                                 ModelHome md = new ModelHome();
+
+                            Toast.makeText(getActivity(), message.toString(), Toast.LENGTH_SHORT).show();
 
                                 md.setId_bunga(object.getString("id_bunga"));
                                 md.setNama_bunga(object.getString("nama_bunga"));
@@ -134,9 +136,9 @@ public class HomeFragment extends Fragment {
 //        AppController.getInstance().addToRequestQueue(sendData);
     }
 
-    @Override
-    public void onResume() {
-        loadJSON();
-        super.onResume();
-    }
+//    @Override
+//    public void onResume() {
+//        loadJSON();
+//        super.onResume();
+//    }
 }

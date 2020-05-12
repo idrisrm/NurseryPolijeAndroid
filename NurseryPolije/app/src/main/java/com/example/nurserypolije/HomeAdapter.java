@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.nurserypolije.R;
 import com.example.nurserypolije.ModelHome;
 import com.squareup.picasso.Picasso;
+import com.example.nurserypolije.config.restServer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +61,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HolderData> {
             holder.namaBunga.setText(modelHome.getNama_bunga());
             holder.deskripsi.setText(modelHome.getDeskripsi());
             Picasso.get()
-                    .load(modelHome.getFoto_bunga())
+                    .load(restServer.URL_FOTO_BUNGA + modelHome.getFoto_bunga())
                     .into(holder.foto);
             holder.url = modelHome.getFoto_bunga();
         } catch (Exception ex) {
