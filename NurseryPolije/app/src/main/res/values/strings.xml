@@ -26,6 +26,11 @@
     <string name="regis_password1_hint">Password</string>
     <string name="regis_password2_hint">Konfirmasi Password</string>
 
+<<<<<<< HEAD
+    <string name="title_activity_started">StartedActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+=======
     <string-array name="settingprofile">
         <item>Ubah Profile</item>
         <item>Ubah Password</item>
@@ -44,4 +49,6 @@
         <item>L</item>
         <item>P</item>
     </string-array>
+    <string name="title_activity_peta_lokasi">Map</string>
+>>>>>>> 158f98c0574fe7489a07723043eafd184679c784
 </resources>

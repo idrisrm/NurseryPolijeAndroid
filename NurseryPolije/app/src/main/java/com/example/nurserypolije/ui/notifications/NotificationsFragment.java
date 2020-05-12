@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -32,6 +33,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.example.nurserypolije.LoginActivity;
+//import com.example.nurserypolije.PetaLokasi;
 import com.example.nurserypolije.R;
 import com.example.nurserypolije.RegisterActivity;
 import com.example.nurserypolije.SessionManager;
@@ -61,7 +63,7 @@ public class NotificationsFragment extends Fragment {
     TextView keterangan, namaprofile, emailprofile, nohpprofile, jkprofile, alamatprofile;
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
-    String Url = "http://192.168.43.243/nuporyV2/Justify/rest_ci/index.php/Profile";
+    String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Profile";
     String id, urlfoto;
     private NotificationsViewModel notificationsViewModel;
     @BindView(R.id.foto) com.mikhaellopez.circularimageview.CircularImageView fotoProfile;
@@ -93,12 +95,31 @@ public class NotificationsFragment extends Fragment {
                 "Bantuan",
                 "Kritik Dan Saran"
         };
+
+
         List<String> item1 = new ArrayList<String>(Arrays.asList(fitur));
 
         ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<String>
                 (getActivity(), android.R.layout.simple_list_item_1, item1);
 
+
         fitur_lainnya.setAdapter(arrayAdapter1);
+//        fitur_lainnya.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                String dipilih = (String) parent.getItemAtPosition(position);
+//
+//                if (dipilih == "Lokasi Kami")
+//                {
+//                    Intent pindah = new Intent(getActivity(), PetaLokasi.class);
+//                    startActivity(pindah);
+//                    Toast.makeText( getActivity(), "Peta Lokasi Nursery Polije", Toast.LENGTH_SHORT ).show();
+//                }else{
+//
+//                }
+//
+//            }
+//        });
 
         //bagian TextView dinamis dari database
         keterangan = root.findViewById(R.id.keterangan);
@@ -134,6 +155,8 @@ public class NotificationsFragment extends Fragment {
                 startActivity(i);
             }
         });
+
+        //jika
 
 
         //jika tombol login dipencet
