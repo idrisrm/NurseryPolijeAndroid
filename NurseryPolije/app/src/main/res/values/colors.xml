@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="biru">#FF000000</color>
+    <color name="lowred">#ff7d7d</color>
 
     <!--colors for modern ui-->
     <color name="whiteTextColor">#fff</color>
@@ -13,7 +14,6 @@
 
     <!--colros for card-->
     <color name="whiteCardColor">#fff</color>
-
 
 
     <color name="address">#2F7092</color>
@@ -27,4 +27,6 @@
     <color name="followingBg">#49BEFF</color>
     <color name="grey">#E5E5E5</color>
     <color name="white">#FFFFFF</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

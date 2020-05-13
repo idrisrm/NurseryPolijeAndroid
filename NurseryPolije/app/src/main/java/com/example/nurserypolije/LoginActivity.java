@@ -18,6 +18,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.nurserypolije.config.restServer;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,8 +36,7 @@ public class LoginActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     SessionManager sessionManager;
-    String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Auth";
-//    String Url = "http://192.168.43.243/yt/login.php";
+    String Url = restServer.URL_LOGIN;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

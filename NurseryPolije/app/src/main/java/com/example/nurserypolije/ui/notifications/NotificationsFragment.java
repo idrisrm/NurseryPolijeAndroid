@@ -1,4 +1,5 @@
 package com.example.nurserypolije.ui.notifications;
+import com.example.nurserypolije.config.restServer;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -63,7 +65,7 @@ public class NotificationsFragment extends Fragment {
     TextView keterangan, namaprofile, emailprofile, nohpprofile, jkprofile, alamatprofile;
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
-    String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Profile";
+    String Url = restServer.URL_PROFILE;
     String id, urlfoto;
     private NotificationsViewModel notificationsViewModel;
     @BindView(R.id.foto) com.mikhaellopez.circularimageview.CircularImageView fotoProfile;
@@ -124,23 +126,13 @@ public class NotificationsFragment extends Fragment {
         //bagian TextView dinamis dari database
         keterangan = root.findViewById(R.id.keterangan);
         namaprofile = root.findViewById(R.id.namaprofile);
-//        emailprofile = root.findViewById(R.id.emailprofile);
-//        nohpprofile = root.findViewById(R.id.nohpprofile);
-//        jkprofile = root.findViewById(R.id.jkprofile);
-//        alamatprofile = root.findViewById(R.id.profile_alamat);
 
         //bagian foto
         fotoProfile = root.findViewById(R.id.foto);
 
-        //bagian TextView Statis
-//        email = root.findViewById(R.id.email);
-//        nohp = root.findViewById(R.id.nohp);
-//        alamat = root.findViewById(R.id.alamat);
-//        jk = root.findViewById(R.id.jk);
-        daftar = root.findViewById(R.id.daftar);
-
         //bagian tombol
         login = root.findViewById(R.id.login);
+        daftar = root.findViewById(R.id.daftar);
         keranjang = root.findViewById(R.id.keranjang);
         ic_setting = root.findViewById(R.id.setting);
 
@@ -193,12 +185,6 @@ public class NotificationsFragment extends Fragment {
             profile();
             daftar.setVisibility(View.GONE);
             login.setVisibility(View.GONE);
-        }else{
-//            email.setVisibility(View.GONE);
-//            nohp.setVisibility(View.GONE);
-//            alamat.setVisibility(View.GONE);
-//            jk.setVisibility(View.GONE);
-//            keterangan.setText("Anda Belum Login");
         }
 
         return root;
@@ -224,23 +210,13 @@ public class NotificationsFragment extends Fragment {
                                     JSONObject object = jsonArray.getJSONObject(i);
 
                                     String namadb = object.getString("nama").trim();
-                                    String emaildb = object.getString("email").trim();
-                                    String nohpdb = object.getString("no_telepon").trim();
-                                    String alamatdb = object.getString("alamat").trim();
-                                    String jkdb = object.getString("jenis_kelamin").trim();
                                     String ketdb = object.getString("waktu_pembuatan").trim();
                                     urlfoto = object.getString("foto");
 
-
-//                                    Glide.with(getActivity()).load(urlfoto).into(fotoProfile);
                                     Picasso.get().load(urlfoto).into(fotoProfile);
 
                                     namaprofile.setText(namadb);
                                     keterangan.setText("Bergabung Sejak " + ketdb);
-//                                    emailprofile.setText(emaildb);
-//                                    nohpprofile.setText(nohpdb);
-//                                    jkprofile.setText(jkdb);
-//                                    alamatprofile.setText(alamatdb);
 
                                     //menghilangkan loading
                                     progressDialog.dismiss();
