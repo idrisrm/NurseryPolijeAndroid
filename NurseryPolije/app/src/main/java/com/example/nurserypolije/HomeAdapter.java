@@ -49,7 +49,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HolderData> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent detail = new Intent(holder.itemView.getContext(), LoginActivity.class);
+                Intent detail = new Intent(holder.itemView.getContext(), DetailBunga.class);
                 detail.putExtra("ID_BUNGA", holder.id_bunga);
                 holder.itemView.getContext().startActivity(detail);
             }

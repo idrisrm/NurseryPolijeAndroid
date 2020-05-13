@@ -80,10 +80,6 @@ public class HomeFragment extends Fragment {
     }
 
     private void loadJSON() {
-        //menampilkan progress dialog
-//        progressDialog.setMessage("Loading...");
-//        progressDialog.show();
-
         StringRequest sendData = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

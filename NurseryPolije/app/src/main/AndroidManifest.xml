@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nurserypolije">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -19,12 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-<!--        <activity-->
-<!--            android:name=".StartedActivity"-->
-<!--            android:configChanges="orientation|keyboardHidden|screenSize"-->
-<!--            android:label="@string/title_activity_started"-->
-<!--            android:theme="@style/FullscreenTheme"></activity>-->
-
+        <activity android:name=".DetailBunga"></activity>
+        <!-- <activity -->
+        <!-- android:name=".StartedActivity" -->
+        <!-- android:configChanges="orientation|keyboardHidden|screenSize" -->
+        <!-- android:label="@string/title_activity_started" -->
+        <!-- android:theme="@style/FullscreenTheme"></activity> -->
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -33,20 +32,18 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-<!--        <meta-data-->
-<!--            android:name="com.google.android.geo.API_KEY"-->
-<!--            android:value="@string/google_maps_key" />-->
-
-<!--        <activity-->
-<!--            android:name=".PetaLokasi"-->
-<!--            android:label="@string/title_activity_peta_lokasi"></activity>-->
+        <!-- <meta-data -->
+        <!-- android:name="com.google.android.geo.API_KEY" -->
+        <!-- android:value="@string/google_maps_key" /> -->
+        <!-- <activity -->
+        <!-- android:name=".PetaLokasi" -->
+        <!-- android:label="@string/title_activity_peta_lokasi"></activity> -->
         <activity android:name=".UbahPassword" />
         <activity android:name=".SettingProfileActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".UbahProfile" />
         <activity android:name=".LupaPassword" />
-
         <activity
             android:name=".MainActivity"
             android:label="Nursery Polije">
