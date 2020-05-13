@@ -1,4 +1,5 @@
 package com.example.nurserypolije.ui.notifications;
+import com.example.nurserypolije.config.restServer;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -63,7 +65,7 @@ public class NotificationsFragment extends Fragment {
     TextView keterangan, namaprofile, emailprofile, nohpprofile, jkprofile, alamatprofile;
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
-    String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Profile";
+    String Url = restServer.URL_PROFILE;
     String id, urlfoto;
     private NotificationsViewModel notificationsViewModel;
     @BindView(R.id.foto) com.mikhaellopez.circularimageview.CircularImageView fotoProfile;

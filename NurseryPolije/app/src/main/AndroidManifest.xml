@@ -19,13 +19,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-<<<<<<< HEAD
-        <activity
-            android:name=".StartedActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_started"
-            android:theme="@style/FullscreenTheme"></activity>
-=======
+<!--        <activity-->
+<!--            android:name=".StartedActivity"-->
+<!--            android:configChanges="orientation|keyboardHidden|screenSize"-->
+<!--            android:label="@string/title_activity_started"-->
+<!--            android:theme="@style/FullscreenTheme"></activity>-->
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -44,7 +42,6 @@
 <!--            android:label="@string/title_activity_peta_lokasi"></activity>-->
         <activity android:name=".UbahPassword" />
         <activity android:name=".SettingProfileActivity" />
->>>>>>> 158f98c0574fe7489a07723043eafd184679c784
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".UbahProfile" />

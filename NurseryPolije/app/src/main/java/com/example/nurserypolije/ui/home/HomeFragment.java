@@ -1,4 +1,5 @@
 package com.example.nurserypolije.ui.home;
+import com.example.nurserypolije.config.restServer;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -42,7 +43,7 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
 
-    String url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/Beranda";
+    String url = restServer.URL_BERANDA;
     RecyclerView.LayoutManager mManager;
     List<ModelHome> mItems;
     RecyclerView recyclerView;
@@ -52,12 +53,14 @@ public class HomeFragment extends Fragment {
     TextView dataKosong;
     ProgressDialog progressDialog;
 
+
     private ArrayList<ModelHome> arrayList;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
+        pb = root.findViewById(R.id.progressbar);
 
         progressDialog = new ProgressDialog(getActivity());
         mItems = new ArrayList<>();
@@ -78,8 +81,8 @@ public class HomeFragment extends Fragment {
 
     private void loadJSON() {
         //menampilkan progress dialog
-        progressDialog.setMessage("Loading...");
-        progressDialog.show();
+//        progressDialog.setMessage("Loading...");
+//        progressDialog.show();
 
         StringRequest sendData = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -94,8 +97,6 @@ public class HomeFragment extends Fragment {
                             JSONObject object = jsonArray.getJSONObject(i);
                                 ModelHome md = new ModelHome();
 
-                            Toast.makeText(getActivity(), message.toString(), Toast.LENGTH_SHORT).show();
-
                                 md.setId_bunga(object.getString("id_bunga"));
                                 md.setNama_bunga(object.getString("nama_bunga"));
                                 md.setId_kategori(object.getString("id_kategori"));
@@ -106,7 +107,7 @@ public class HomeFragment extends Fragment {
                                 md.setDeskripsi(object.getString("deskripsi"));
                                 md.setCara_perawatan(object.getString("cara_perawatan"));
                                 mItems.add(md);
-                            progressDialog.dismiss();
+                                pb.setVisibility(View.GONE);
                         }
                     } else {
                         progressDialog.dismiss();
