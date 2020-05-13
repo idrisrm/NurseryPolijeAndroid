@@ -1,9 +1,11 @@
 package com.example.nurserypolije;
 
+import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -20,6 +23,7 @@ import com.android.volley.toolbox.Volley;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -38,6 +42,7 @@ public class UbahProfile extends AppCompatActivity {
     RequestQueue requestQueue;
     SessionManager sessionManager;
     String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Profile/ubahProfil";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,12 +57,14 @@ public class UbahProfile extends AppCompatActivity {
         alamat = findViewById(R.id.edit_alamat);
         jk = findViewById(R.id.edit_jk);
         simpan = findViewById(R.id.simpan);
+        pesan = findViewById(R.id.pesan);
 
         //mengambil email dari session manager
         HashMap<String, String> user = sessionManager.getUserDetail();
         email = user.get(sessionManager.EMAIL);
-        nama.setText(user .get(sessionManager.NAMA));
-
+        nama.setText(user.get(sessionManager.NAMA));
+        alamat.setText(user.get(sessionManager.ALAMAT));
+        nomor_telepon.setText(user.get(sessionManager.NOTEL));
 
         //Jika tombol simpan di pencet
         simpan.setOnClickListener(new View.OnClickListener() {
