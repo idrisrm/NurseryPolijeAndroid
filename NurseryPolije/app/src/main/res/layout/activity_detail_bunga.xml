@@ -73,7 +73,7 @@
             <TextView
                 android:id="@+id/tvDeskripsi"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
@@ -82,8 +82,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvStok"
-                tools:text="@tools:sample/lorem/random" />
+                app:layout_constraintTop_toBottomOf="@+id/tvStok"/>
 
             <ProgressBar
                 android:id="@+id/progressbar"
@@ -98,6 +97,34 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btnKeranjang"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnBeli"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Keranjang"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnBeli"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/btnKeranjang"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Beli"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="MissingConstraints" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
