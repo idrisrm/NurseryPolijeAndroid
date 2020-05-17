@@ -59,7 +59,7 @@ public class UbahProfile extends AppCompatActivity {
         simpan = findViewById(R.id.simpan);
         pesan = findViewById(R.id.pesan);
 
-        //mengambil email dari session manager
+        //mengambil data yg login dari session manager
         HashMap<String, String> user = sessionManager.getUserDetail();
         email = user.get(sessionManager.EMAIL);
         nama.setText(user.get(sessionManager.NAMA));
@@ -88,6 +88,10 @@ public class UbahProfile extends AppCompatActivity {
         namaH = nama.getText().toString().trim();
         nomor_teleponH = nomor_telepon.getText().toString().trim();
         jkH = jk.getSelectedItem().toString().trim();
+        if(jkH == "Jenis Kelamin")
+        {
+            jkH = null;
+        }
         alamatH = alamat.getText().toString().trim();
         if (TextUtils.isEmpty(namaH)
                 || (TextUtils.isEmpty(nomor_teleponH))
