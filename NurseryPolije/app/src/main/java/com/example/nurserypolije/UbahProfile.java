@@ -20,6 +20,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.nurserypolije.config.restServer;
+import com.squareup.picasso.Picasso;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,6 +32,8 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.BindView;
+
 public class UbahProfile extends AppCompatActivity {
 
     EditText nama, nomor_telepon, alamat;
@@ -37,12 +41,12 @@ public class UbahProfile extends AppCompatActivity {
     TextView pesan, daftar;
     Button simpan;
     Boolean cek;
-    String namaH, nomor_teleponH, jkH, alamatH, email;
+    String namaH, nomor_teleponH, jkH, alamatH, email, id, urlFoto;
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     SessionManager sessionManager;
-    //String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Profile/ubahProfil";
-    String Url = "http://192.168.18.18/nuporyV2/Justify/rest_ci/index.php/Profile/ubahProfil"; //ip sayyid
+    String Url = restServer.URL_UBAH_PROFILE;
+    @BindView(R.id.foto_profile) com.mikhaellopez.circularimageview.CircularImageView fotoProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +54,10 @@ public class UbahProfile extends AppCompatActivity {
         setContentView(R.layout.layout_update_profile);
 
         sessionManager = new SessionManager(UbahProfile.this);
-        requestQueue = Volley.newRequestQueue(UbahProfile.this);
         progressDialog = new ProgressDialog(UbahProfile.this);
+        requestQueue = Volley.newRequestQueue(UbahProfile.this);
+
+        fotoProfile = findViewById(R.id.foto_profile);
 
         nama = findViewById(R.id.edit_nama);
         nomor_telepon = findViewById(R.id.edit_notel);
@@ -60,12 +66,19 @@ public class UbahProfile extends AppCompatActivity {
         simpan = findViewById(R.id.simpan);
         pesan = findViewById(R.id.pesan);
 
-        //mengambil data yg login dari session manager
+//        mengambil data yg login dari session manager
         HashMap<String, String> user = sessionManager.getUserDetail();
-        email = user.get(sessionManager.EMAIL);
-        nama.setText(user.get(sessionManager.NAMA));
-        alamat.setText(user.get(sessionManager.ALAMAT));
-        nomor_telepon.setText(user.get(sessionManager.NOTEL));
+
+        //pengecekan sudah login atau tidak
+        if (sessionManager.isLoggin() == true)
+        {
+            email = user.get(sessionManager.EMAIL);
+//        id = user.get(sessionManager.ID);
+            nama.setText(user.get(sessionManager.NAMA));
+            alamat.setText(user.get(sessionManager.ALAMAT));
+            nomor_telepon.setText(user.get(sessionManager.NOTEL));
+            Picasso.get().load("http://192.168.43.11/nuporyV2/Justify/assets/img/foto/" + user.get(sessionManager.FOTO)).into(fotoProfile);
+        }
 
         //Jika tombol simpan di pencet
         simpan.setOnClickListener(new View.OnClickListener() {
@@ -89,10 +102,6 @@ public class UbahProfile extends AppCompatActivity {
         namaH = nama.getText().toString().trim();
         nomor_teleponH = nomor_telepon.getText().toString().trim();
         jkH = jk.getSelectedItem().toString().trim();
-        if(jkH == "Jenis Kelamin")
-        {
-            jkH = null;
-        }
         alamatH = alamat.getText().toString().trim();
         if (TextUtils.isEmpty(namaH)
                 || (TextUtils.isEmpty(nomor_teleponH))
