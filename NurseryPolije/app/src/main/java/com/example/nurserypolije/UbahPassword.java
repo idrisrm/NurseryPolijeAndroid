@@ -35,8 +35,8 @@ public class UbahPassword extends AppCompatActivity {
     RequestQueue requestQueue;
     SessionManager sessionManager;
     TextView pesan;
-    String url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Profile/ubah";
-
+    //String url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Profile/ubah";
+    String url = "http://192.168.18.18/nuporyV2/Justify/rest_ci/index.php/Profile/ubah"; //ip sayyid
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

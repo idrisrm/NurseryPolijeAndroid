@@ -41,7 +41,8 @@ public class UbahProfile extends AppCompatActivity {
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     SessionManager sessionManager;
-    String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Profile/ubahProfil";
+    //String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Profile/ubahProfil";
+    String Url = "http://192.168.18.18/nuporyV2/Justify/rest_ci/index.php/Profile/ubahProfil"; //ip sayyid
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
