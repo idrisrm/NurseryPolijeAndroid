@@ -1,4 +1,5 @@
 package com.example.nurserypolije.ui.notifications;
+import com.example.nurserypolije.PetaLokasi;
 import com.example.nurserypolije.config.restServer;
 
 import android.app.ProgressDialog;
@@ -106,22 +107,22 @@ public class NotificationsFragment extends Fragment {
 
 
         fitur_lainnya.setAdapter(arrayAdapter1);
-//        fitur_lainnya.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                String dipilih = (String) parent.getItemAtPosition(position);
-//
-//                if (dipilih == "Lokasi Kami")
-//                {
-//                    Intent pindah = new Intent(getActivity(), PetaLokasi.class);
-//                    startActivity(pindah);
-//                    Toast.makeText( getActivity(), "Peta Lokasi Nursery Polije", Toast.LENGTH_SHORT ).show();
-//                }else{
-//
-//                }
-//
-//            }
-//        });
+        fitur_lainnya.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String dipilih = (String) parent.getItemAtPosition(position);
+
+                if (dipilih == "Lokasi Kami")
+                {
+                    Intent pindah = new Intent(getActivity(), PetaLokasi.class);
+                    startActivity(pindah);
+                    Toast.makeText( getActivity(), "Peta Lokasi Nursery Polije", Toast.LENGTH_SHORT ).show();
+                }else{
+
+                }
+
+            }
+        });
 
         //bagian TextView dinamis dari database
         keterangan = root.findViewById(R.id.keterangan);
