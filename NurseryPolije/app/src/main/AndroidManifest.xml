@@ -18,8 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DetailBunga"></activity>
-        <!-- <activity -->
+        <activity android:name=".KeranjangActivity"></activity>
+        <activity android:name=".DetailBunga" /> <!-- <activity -->
         <!-- android:name=".StartedActivity" -->
         <!-- android:configChanges="orientation|keyboardHidden|screenSize" -->
         <!-- android:label="@string/title_activity_started" -->

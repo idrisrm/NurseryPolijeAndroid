@@ -9,4 +9,6 @@ public class restServer {
     public static final String URL_PROFILE = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Profile";
     //URL Beranda
     public static final String URL_BERANDA = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Beranda";
+    //URL Keranjang
+    public static final String URL_KERANJANG = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Transaksi/Keranjang";
 }
