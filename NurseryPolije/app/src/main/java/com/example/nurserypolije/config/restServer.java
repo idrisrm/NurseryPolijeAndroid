@@ -12,9 +12,9 @@ public class restServer {
     public static final String URL_LOGIN = "http://192.168.43.11/nuporyV2/Justify/rest_ci/Auth"; //ip Ridho
 
     //URL Profile
-    //public static final String URL_PROFILE = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Profile";
+    public static final String URL_PROFILE = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Profile";
     //public static final String URL_PROFILE = "http://192.168.18.18/nuporyV2/Justify/rest_ci/Profile"; //ip sayyid
-    public static final String URL_PROFILE = "http://192.168.43.11/nuporyV2/Justify/rest_ci/Profile"; //ip Ridho
+//    public static final String URL_PROFILE = "http://192.168.43.11/nuporyV2/Justify/rest_ci/Profile"; //ip Ridho
 
     //URL Beranda
     public static final String URL_BERANDA = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Beranda";
@@ -26,4 +26,8 @@ public class restServer {
 
     //URL ubahProfil
     public static final String URL_UBAH_PROFILE = "http://192.168.43.11/nuporyV2/Justify/rest_ci/Profile/ubahProfil"; //ip Ridho
+
+
+    //URL Keranjang User
+    public static final String URL_KERANJANG_USER = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Transaksi/KeranjangUser";
 }
