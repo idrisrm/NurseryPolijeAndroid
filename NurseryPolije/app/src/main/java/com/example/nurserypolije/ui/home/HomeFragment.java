@@ -65,14 +65,12 @@ public class HomeFragment extends Fragment {
         progressDialog = new ProgressDialog(getActivity());
         mItems = new ArrayList<>();
         arrayList = new ArrayList<>();
-//        pb = root.findViewById(R.id.progressbar);
         mAdapter = new HomeAdapter(getContext(), mItems);
         mManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView = root.findViewById(R.id.rvBunga);
         recyclerView.setLayoutManager(mManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(mAdapter);
-//        dataKosong = root.findViewById(R.id.dataKosong);
 
         loadJSON();
 

@@ -1,9 +1,11 @@
 package com.example.nurserypolije;
 
+import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,20 +13,26 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.nurserypolije.config.restServer;
+import com.squareup.picasso.Picasso;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import butterknife.BindView;
 
 public class UbahProfile extends AppCompatActivity {
 
@@ -33,12 +41,12 @@ public class UbahProfile extends AppCompatActivity {
     TextView pesan, daftar;
     Button simpan;
     Boolean cek;
-    String namaH, nomor_teleponH, jkH, alamatH, email;
+    String namaH, nomor_teleponH, jkH, alamatH, email, id, urlFoto;
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     SessionManager sessionManager;
-    //String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Profile/ubahProfil";
-    String Url = "http://192.168.18.18/nuporyV2/Justify/rest_ci/index.php/Profile/ubahProfil"; //ip sayyid
+    String Url = restServer.URL_UBAH_PROFILE;
+    @BindView(R.id.foto_profile) com.mikhaellopez.circularimageview.CircularImageView fotoProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,20 +54,31 @@ public class UbahProfile extends AppCompatActivity {
         setContentView(R.layout.layout_update_profile);
 
         sessionManager = new SessionManager(UbahProfile.this);
-        requestQueue = Volley.newRequestQueue(UbahProfile.this);
         progressDialog = new ProgressDialog(UbahProfile.this);
+        requestQueue = Volley.newRequestQueue(UbahProfile.this);
+
+        fotoProfile = findViewById(R.id.foto_profile);
 
         nama = findViewById(R.id.edit_nama);
         nomor_telepon = findViewById(R.id.edit_notel);
         alamat = findViewById(R.id.edit_alamat);
         jk = findViewById(R.id.edit_jk);
         simpan = findViewById(R.id.simpan);
+        pesan = findViewById(R.id.pesan);
 
-        //mengambil email dari session manager
+//        mengambil data yg login dari session manager
         HashMap<String, String> user = sessionManager.getUserDetail();
-        email = user.get(sessionManager.EMAIL);
-        nama.setText(user .get(sessionManager.NAMA));
 
+        //pengecekan sudah login atau tidak
+        if (sessionManager.isLoggin() == true)
+        {
+            email = user.get(sessionManager.EMAIL);
+//        id = user.get(sessionManager.ID);
+            nama.setText(user.get(sessionManager.NAMA));
+            alamat.setText(user.get(sessionManager.ALAMAT));
+            nomor_telepon.setText(user.get(sessionManager.NOTEL));
+            Picasso.get().load("http://192.168.43.11/nuporyV2/Justify/assets/img/foto/" + user.get(sessionManager.FOTO)).into(fotoProfile);
+        }
 
         //Jika tombol simpan di pencet
         simpan.setOnClickListener(new View.OnClickListener() {

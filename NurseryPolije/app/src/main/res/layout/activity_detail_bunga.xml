@@ -45,19 +45,27 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvNamaBunga"
+            android:id="@+id/tvNamaBunga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:maxLines="3"
+            android:textColor="#000"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivBunga" />
+
+            <TextView
+                android:id="@+id/tvHargaBunga"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:maxLines="3"
-                android:textColor="#000"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivBunga" />
+                app:layout_constraintStart_toStartOf="@+id/tvNamaBunga"
+                app:layout_constraintTop_toBottomOf="@+id/tvNamaBunga"/>
 
             <TextView
                 android:id="@+id/tvStok"
@@ -65,8 +73,8 @@
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/black"
                 android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@+id/tvNamaBunga"
-                app:layout_constraintTop_toBottomOf="@+id/tvNamaBunga" />
+                app:layout_constraintStart_toStartOf="@+id/tvHargaBunga"
+                app:layout_constraintTop_toBottomOf="@+id/tvHargaBunga" />
 
 
 

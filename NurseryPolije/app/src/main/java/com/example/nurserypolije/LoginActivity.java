@@ -142,9 +142,13 @@ public class LoginActivity extends AppCompatActivity {
                                     String id = object.getString("id").trim();
                                     String nama = object.getString("nama").trim();
                                     String email = object.getString("email").trim();
+                                    String alamat = object.getString("alamat").trim();
+                                    String notel = object.getString("no_telepon").trim();
+                                    String jk = object.getString("jenis_kelamin").trim();
+                                    String foto = object.getString("foto").trim();
 
                                     //membuat session saat berhasil login
-                                    sessionManager.createSession(id, nama, email);
+                                    sessionManager.createSession(id, nama, email, alamat, notel, jk, foto);
 
                                     Toast.makeText(LoginActivity.this, "Selamat Datang "+ nama , Toast.LENGTH_SHORT).show();
                                     finish();

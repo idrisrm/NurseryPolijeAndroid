@@ -1,4 +1,5 @@
 package com.example.nurserypolije.ui.notifications;
+import com.example.nurserypolije.KeranjangActivity;
 import com.example.nurserypolije.PetaLokasi;
 import com.example.nurserypolije.config.restServer;
 
@@ -146,6 +147,8 @@ public class NotificationsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 sessionManager.checkLogin();
+                Intent i = new Intent(getContext(), KeranjangActivity.class);
+                startActivity(i);
             }
         });
 
