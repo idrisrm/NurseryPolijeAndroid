@@ -31,23 +31,23 @@
     <!--    <string name="dummy_button">Dummy Button</string>-->
     <!--    <string name="dummy_content">DUMMY\nCONTENT</string>-->
     <!--=======-->
-    <string-array name="settingprofile">
-        <item>Ubah Profile</item>
-        <item>Ubah Password</item>
-    </string-array>
-
-
     <string name="username">username</string>
+
+
     <string name="regis_alamat_hint">Alamat</string>
     <string name="regis_jk_hint">Jenis Kelamin</string>
     <string name="password_baru1">Password Baru</string>
     <string name="password_lama1">Password Lama</string>
     <string name="konfirmasi_password1">Konfirmasi Password</string>
+    <string name="title_activity_peta_lokasi">Map</string>
 
+    <string-array name="settingprofile">
+        <item>Ubah Profile</item>
+        <item>Ubah Password</item>
+    </string-array>
     <string-array name="jenisKelamin">
         <item>Jenis Kelamin</item>
         <item>L</item>
         <item>P</item>
     </string-array>
-    <string name="title_activity_peta_lokasi">Map</string>
 </resources>
