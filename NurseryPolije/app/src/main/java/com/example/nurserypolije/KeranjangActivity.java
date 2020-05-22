@@ -49,7 +49,7 @@ public class KeranjangActivity extends AppCompatActivity {
         arrayList = new ArrayList<>();
         mAdapter = new KeranjangAdapter(KeranjangActivity.this, mItems);
         mManager = new LinearLayoutManager(KeranjangActivity.this, LinearLayoutManager.VERTICAL, false);
-        recyclerView = findViewById(R.id.rvBunga);
+        recyclerView = findViewById(R.id.rvkeranjang);
         recyclerView.setLayoutManager(mManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(mAdapter);
@@ -65,7 +65,7 @@ public class KeranjangActivity extends AppCompatActivity {
 
 
     private void Keranjang() {
-        StringRequest sendData = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+        StringRequest sendData = new StringRequest(Request.Method.GET, url+"?email="+email, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -107,7 +107,7 @@ public class KeranjangActivity extends AppCompatActivity {
             @Override
             public Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("email", email);
+//                params.put("email", email);
                 return params;
             }
         };
