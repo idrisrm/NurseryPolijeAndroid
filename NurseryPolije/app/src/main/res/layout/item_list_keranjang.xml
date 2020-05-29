@@ -16,7 +16,7 @@
         android:layout_height="90dp">
 
         <ImageView
-            android:id="@+id/ivBunga"
+            android:id="@+id/ivBungaKeranjang"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
@@ -39,7 +39,7 @@
             app:layout_constraintVertical_bias="1.0">
 
             <TextView
-                android:id="@+id/tvNamaBunga"
+                android:id="@+id/tvNamaBungaKeranjang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -55,10 +55,10 @@
                 tools:ignore="MissingConstraints" />
 
             <TextView
-                android:id="@+id/tvTotalHarga"
+                android:id="@+id/tvTotalHargaKeranjang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvNamaBunga"
+                android:layout_below="@id/tvNamaBungaKeranjang"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
@@ -69,23 +69,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvJumlahBeli"
+                app:layout_constraintTop_toBottomOf="@+id/tvJumlahBeliKeranjang"
                 app:layout_constraintVertical_bias="0.0"
                 tools:text="@tools:sample/lorem/random" />
 
             <TextView
-                android:id="@+id/tvJumlahBeli"
+                android:id="@+id/tvJumlahBeliKeranjang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvTotalHarga"
+                android:layout_below="@id/tvTotalHargaKeranjang"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:textSize="12sp"
-                android:text="20"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintTop_toBottomOf="@+id/tvNamaBunga"/>
+                app:layout_constraintTop_toBottomOf="@+id/tvNamaBungaKeranjang"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

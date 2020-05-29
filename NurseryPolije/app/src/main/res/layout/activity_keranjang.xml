@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,10 +7,15 @@
     tools:context=".KeranjangActivity">
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="50dp">
+        android:paddingBottom="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -34,5 +39,36 @@
 
     </ScrollView>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/aksi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:background="@color/primaryTextColor"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/btnKeranjang"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnBeli"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Keranjang"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnBeli"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/btnKeranjang"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Check Out"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="MissingConstraints" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

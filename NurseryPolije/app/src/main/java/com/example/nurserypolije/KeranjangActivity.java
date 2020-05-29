@@ -78,6 +78,9 @@ public class KeranjangActivity extends AppCompatActivity {
                             JSONObject object = jsonArray.getJSONObject(i);
                             ModelKeranjang md = new ModelKeranjang();
 
+
+                            String nb = object.getString("nama_bunga");
+
                             md.setId_bunga(object.getString("id_bunga"));
                             md.setNama_bunga(object.getString("nama_bunga"));
                             md.setId_kategori(object.getString("id_kategori"));
@@ -85,6 +88,7 @@ public class KeranjangActivity extends AppCompatActivity {
                             md.settotalHarga(object.getString("total_harga"));
                             md.setFoto_bunga(object.getString("foto_bunga"));
                             mItems.add(md);
+                            Toast.makeText(KeranjangActivity.this, nb.toString(), Toast.LENGTH_SHORT).show();
 //                            pb.setVisibility(View.GONE);
                         }
                     } else {

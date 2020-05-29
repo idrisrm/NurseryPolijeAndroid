@@ -2,6 +2,7 @@ package com.example.nurserypolije;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.android.volley.VolleyLog.TAG;
 
 public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.HolderData> {
     private List<ModelKeranjang> mItems;
@@ -42,7 +45,7 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.Hold
     @Override
     public void onBindViewHolder(@NonNull final KeranjangAdapter.HolderData holder, int position) {
         ModelKeranjang modelKeranjang = mItems.get(position);
-        //klik untuk Intent dan parsing data ke detail event
+        //klik untuk Intent dan parsing data ke detail bunga
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +56,7 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.Hold
         });
 
         try {
+            Log.e(TAG, "huhu: " );
             holder.id_bunga = modelKeranjang.getId_bunga();
             holder.jumlahBeli.setText(modelKeranjang.getJumlah());
             holder.namaBunga.setText(modelKeranjang.getNama_bunga());
@@ -77,10 +81,10 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.Hold
 
         public HolderData(@NonNull View itemView) {
             super(itemView);
-            foto = itemView.findViewById(R.id.ivBunga);
-            namaBunga = itemView.findViewById(R.id.tvNamaBunga);
-            jumlahBeli = itemView.findViewById(R.id.tvJumlahBeli);
-            totalHarga = itemView.findViewById(R.id.tvTotalHarga);
+            foto = itemView.findViewById(R.id.ivBungaKeranjang);
+            namaBunga = itemView.findViewById(R.id.tvNamaBungaKeranjang);
+            jumlahBeli = itemView.findViewById(R.id.tvJumlahBeliKeranjang);
+            totalHarga = itemView.findViewById(R.id.tvTotalHargaKeranjang);
         }
     }
 }
