@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +40,7 @@ public class KeranjangActivity extends AppCompatActivity {
     List<ModelKeranjang> mItems;
     RecyclerView recyclerView;
     KeranjangAdapter mAdapter;
+    Button checkout;
 
     private ArrayList<ModelKeranjang> arrayList;
     @Override
@@ -53,6 +56,16 @@ public class KeranjangActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(mAdapter);
+
+        //checkout
+        checkout = findViewById(R.id.btnCheckOutKeranjang);
+        checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(KeranjangActivity.this, CheckOutActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         sessionManager = new SessionManager(KeranjangActivity.this);

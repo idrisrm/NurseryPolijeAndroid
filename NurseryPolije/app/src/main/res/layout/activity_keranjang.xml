@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:paddingBottom="70dp"
+        android:paddingBottom="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -48,20 +48,20 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:id="@+id/btnKeranjang"
+            android:id="@+id/btnKembaliKeranjang"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnBeli"
+            app:layout_constraintEnd_toStartOf="@+id/btnCheckOutKeranjang"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="Keranjang"
+            android:text="Kembali"
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/btnBeli"
+            android:id="@+id/btnCheckOutKeranjang"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/btnKeranjang"
+            app:layout_constraintStart_toEndOf="@+id/btnKembaliKeranjang"
             app:layout_constraintEnd_toEndOf="parent"
             android:text="Check Out"
             app:layout_constraintBottom_toBottomOf="parent"
