@@ -32,7 +32,7 @@ import java.util.Map;
 
 public class KeranjangActivity extends AppCompatActivity {
     String url = restServer.URL_KERANJANG_USER;
-    String email;
+    String email, idTransaksi;
     SessionManager sessionManager;
 //    ImageView fotoBunga;
 //    TextView namaBunga, jumlahBeli, TotalHarga;
@@ -63,6 +63,7 @@ public class KeranjangActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(KeranjangActivity.this, CheckOutActivity.class);
+                intent.putExtra("idTransaksi", idTransaksi);
                 startActivity(intent);
             }
         });
@@ -93,6 +94,7 @@ public class KeranjangActivity extends AppCompatActivity {
 
 
                             String nb = object.getString("nama_bunga");
+                            idTransaksi = object.getString("id_transaksi");
 
                             md.setId_bunga(object.getString("id_bunga"));
                             md.setNama_bunga(object.getString("nama_bunga"));
@@ -101,7 +103,7 @@ public class KeranjangActivity extends AppCompatActivity {
                             md.settotalHarga(object.getString("total_harga"));
                             md.setFoto_bunga(object.getString("foto_bunga"));
                             mItems.add(md);
-                            Toast.makeText(KeranjangActivity.this, nb.toString(), Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(KeranjangActivity.this, idTransaksi.toString(), Toast.LENGTH_SHORT).show();
 //                            pb.setVisibility(View.GONE);
                         }
                     } else {
