@@ -82,20 +82,20 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:id="@+id/btnKeranjang"
+            android:id="@+id/btnKembaliCheckOut"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnBeli"
+            app:layout_constraintEnd_toStartOf="@+id/btnCheckOutCheckOut"
             app:layout_constraintBottom_toBottomOf="parent"
             android:text="Kembali"
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/btnBeli"
+            android:id="@+id/btnCheckOutCheckOut"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/btnKeranjang"
+            app:layout_constraintStart_toEndOf="@+id/btnKembaliCheckOut"
             app:layout_constraintEnd_toEndOf="parent"
             android:text="Check Out"
             app:layout_constraintBottom_toBottomOf="parent"

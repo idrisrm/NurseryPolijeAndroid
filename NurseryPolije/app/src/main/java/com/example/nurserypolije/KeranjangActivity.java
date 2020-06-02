@@ -70,7 +70,7 @@ public class KeranjangActivity extends AppCompatActivity {
 
 
         sessionManager = new SessionManager(KeranjangActivity.this);
-        //mengambil ID dari session manager
+        //mengambil EMAIL dari session manager
         HashMap<String, String> user = sessionManager.getUserDetail();
         email = user.get(sessionManager.EMAIL);
 

@@ -32,4 +32,8 @@ public class restServer {
     //URL Keranjang User
     public static final String URL_KERANJANG_USER = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Transaksi/KeranjangUser";
 //    public static final String URL_KERANJANG_USER = "http://192.168.43.55/nuporyV2/Justify/rest_ci/Transaksi/KeranjangUser"; // ip sayyid
+
+    //URL CHECKOUT
+    public static final String URL_CHECKOUT_GET = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Transaksi/CheckOut";
+
 }
