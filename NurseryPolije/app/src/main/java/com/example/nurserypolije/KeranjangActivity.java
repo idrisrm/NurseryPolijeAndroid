@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +32,7 @@ import java.util.Map;
 
 public class KeranjangActivity extends AppCompatActivity {
     String url = restServer.URL_KERANJANG_USER;
-    String email;
+    String email, idTransaksi;
     SessionManager sessionManager;
 //    ImageView fotoBunga;
 //    TextView namaBunga, jumlahBeli, TotalHarga;
@@ -38,6 +40,7 @@ public class KeranjangActivity extends AppCompatActivity {
     List<ModelKeranjang> mItems;
     RecyclerView recyclerView;
     KeranjangAdapter mAdapter;
+    Button checkout;
 
     private ArrayList<ModelKeranjang> arrayList;
     @Override
@@ -54,9 +57,20 @@ public class KeranjangActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(mAdapter);
 
+        //checkout
+        checkout = findViewById(R.id.btnCheckOutKeranjang);
+        checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(KeranjangActivity.this, CheckOutActivity.class);
+                intent.putExtra("idTransaksi", idTransaksi);
+                startActivity(intent);
+            }
+        });
+
 
         sessionManager = new SessionManager(KeranjangActivity.this);
-        //mengambil ID dari session manager
+        //mengambil EMAIL dari session manager
         HashMap<String, String> user = sessionManager.getUserDetail();
         email = user.get(sessionManager.EMAIL);
 
@@ -78,6 +92,10 @@ public class KeranjangActivity extends AppCompatActivity {
                             JSONObject object = jsonArray.getJSONObject(i);
                             ModelKeranjang md = new ModelKeranjang();
 
+
+                            String nb = object.getString("nama_bunga");
+                            idTransaksi = object.getString("id_transaksi");
+
                             md.setId_bunga(object.getString("id_bunga"));
                             md.setNama_bunga(object.getString("nama_bunga"));
                             md.setId_kategori(object.getString("id_kategori"));
@@ -85,6 +103,7 @@ public class KeranjangActivity extends AppCompatActivity {
                             md.settotalHarga(object.getString("total_harga"));
                             md.setFoto_bunga(object.getString("foto_bunga"));
                             mItems.add(md);
+//                            Toast.makeText(KeranjangActivity.this, idTransaksi.toString(), Toast.LENGTH_SHORT).show();
 //                            pb.setVisibility(View.GONE);
                         }
                     } else {
