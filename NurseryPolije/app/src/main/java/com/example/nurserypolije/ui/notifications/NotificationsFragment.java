@@ -1,5 +1,6 @@
 package com.example.nurserypolije.ui.notifications;
 import com.example.nurserypolije.KeranjangActivity;
+import com.example.nurserypolije.Kritik;
 import com.example.nurserypolije.PetaLokasi;
 import com.example.nurserypolije.config.restServer;
 
@@ -124,6 +125,19 @@ public class NotificationsFragment extends Fragment {
 
             }
         });
+
+//        fitur_lainnya.setAdapter(arrayAdapter3);
+//        fitur_lainnya.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                String diklik = (String) parent.getItemAtPosition(position);
+//                if(diklik == "Kritik dan Saran")
+//                {
+//                    Intent kritik = new Intent(getActivity(), LoginActivity.class);
+//                    startActivity(kritik);
+//                }
+//            }
+//        });
 
         //bagian TextView dinamis dari database
         keterangan = root.findViewById(R.id.keterangan);
