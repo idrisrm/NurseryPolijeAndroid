@@ -2,6 +2,7 @@ package com.example.nurserypolije;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -138,6 +139,8 @@ Button keranjang, beli;
                     String message = jsonObject.getString("message");
                     if (success.equals("1")) {
                         Toast.makeText(DetailBunga.this, message.toString(), Toast.LENGTH_SHORT).show();
+                        Intent k = new Intent(DetailBunga.this, KeranjangActivity.class);
+                        startActivity(k);
                     } else {
                         Toast.makeText(DetailBunga.this, message.toString(), Toast.LENGTH_SHORT).show();
                     }

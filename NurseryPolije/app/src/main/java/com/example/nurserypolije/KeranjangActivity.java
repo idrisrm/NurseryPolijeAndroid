@@ -1,6 +1,7 @@
 package com.example.nurserypolije;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -36,11 +37,13 @@ public class KeranjangActivity extends AppCompatActivity {
     SessionManager sessionManager;
 //    ImageView fotoBunga;
 //    TextView namaBunga, jumlahBeli, TotalHarga;
+    TextView keteranganKeranjang;
     RecyclerView.LayoutManager mManager;
     List<ModelKeranjang> mItems;
     RecyclerView recyclerView;
     KeranjangAdapter mAdapter;
     Button checkout;
+    ConstraintLayout aksi;
 
     private ArrayList<ModelKeranjang> arrayList;
     @Override
@@ -68,6 +71,8 @@ public class KeranjangActivity extends AppCompatActivity {
             }
         });
 
+        aksi = findViewById(R.id.aksi);
+        keteranganKeranjang = findViewById(R.id.keteranganKeranjang);
 
         sessionManager = new SessionManager(KeranjangActivity.this);
         //mengambil EMAIL dari session manager
@@ -86,8 +91,8 @@ public class KeranjangActivity extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     String success = jsonObject.getString("success");
                     String message = jsonObject.getString("message");
-                    JSONArray jsonArray = jsonObject.getJSONArray("keranjang");
                     if (success.equals("1")) {
+                        JSONArray jsonArray = jsonObject.getJSONArray("keranjang");
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject object = jsonArray.getJSONObject(i);
                             ModelKeranjang md = new ModelKeranjang();
@@ -105,10 +110,10 @@ public class KeranjangActivity extends AppCompatActivity {
                             mItems.add(md);
 //                            Toast.makeText(KeranjangActivity.this, idTransaksi.toString(), Toast.LENGTH_SHORT).show();
 //                            pb.setVisibility(View.GONE);
+                            keteranganKeranjang.setVisibility(View.GONE);
                         }
                     } else {
-//                        progressDialog.dismiss();
-                        Toast.makeText(KeranjangActivity.this, message.toString(), Toast.LENGTH_SHORT).show();
+                        aksi.setVisibility(View.GONE);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
