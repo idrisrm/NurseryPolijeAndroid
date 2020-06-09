@@ -6,8 +6,8 @@ public class restServer {
     public static final String URL_FOTO_PROFILE = "http://192.168.43.243/nuporyV2/Justify/assets/img/foto/";
 
     //URL foto bunga
-    //public static final String URL_FOTO_BUNGA = "http://192.168.43.243/nuporyV2/Justify/assets/img/fotobunga/";
-    public static final String URL_FOTO_BUNGA = "http://192.168.43.55/nuporyV2/Justify/assets/img/fotobunga/"; //ip sayyid
+    public static final String URL_FOTO_BUNGA = "http://192.168.43.243/nuporyV2/Justify/assets/img/fotobunga/";
+//    public static final String URL_FOTO_BUNGA = "http://192.168.43.55/nuporyV2/Justify/assets/img/fotobunga/"; //ip sayyid
     //public static final String URL_FOTO_BUNGA = "http://192.168.43.11/nuporyV2/Justify/assets/img/fotobunga/"; //ip Ridho
 
     //URL login
@@ -42,4 +42,7 @@ public class restServer {
 
     //URL CheckOut
     public static final String URL_CHECKOUT = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Transaksi/CheckOut";
+
+    //URL Tagihan
+    public static final String URL_TAGIHAN = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Transaksi/Tagihan";
 }

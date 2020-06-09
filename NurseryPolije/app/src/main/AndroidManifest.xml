@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Kritik"></activity>
+        <activity android:name=".TagihanActivity"></activity>
+        <activity android:name=".Kritik" />
         <activity android:name=".KeranjangActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
@@ -62,7 +63,7 @@
         <activity android:name=".CheckOutActivity" />
         <activity
             android:name=".MainActivity"
-            android:label="Nursery Polije"></activity>
+            android:label="Nursery Polije" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

@@ -103,9 +103,7 @@ public class KeranjangActivity extends AppCompatActivity {
 
                             md.setId_bunga(object.getString("id_bunga"));
                             md.setNama_bunga(object.getString("nama_bunga"));
-                            md.setId_kategori(object.getString("id_kategori"));
                             md.setJumlah(object.getInt("jumlah"));
-                            md.settotalHarga(object.getString("total_harga"));
                             md.setFoto_bunga(object.getString("foto_bunga"));
                             mItems.add(md);
 //                            Toast.makeText(KeranjangActivity.this, idTransaksi.toString(), Toast.LENGTH_SHORT).show();

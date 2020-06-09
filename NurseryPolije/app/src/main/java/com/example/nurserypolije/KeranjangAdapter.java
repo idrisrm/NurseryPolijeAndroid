@@ -56,10 +56,9 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.Hold
         });
 
         try {
-            Log.e(TAG, "huhu: " );
             holder.id_bunga = modelKeranjang.getId_bunga();
-            holder.jumlahBeli.setText(modelKeranjang.getJumlah());
             holder.namaBunga.setText(modelKeranjang.getNama_bunga());
+//            holder.jumlahBeli.setText(modelKeranjang.getJumlah());
             Picasso.get()
                     .load(restServer.URL_FOTO_BUNGA + modelKeranjang.getFoto_bunga())
                     .into(holder.foto);

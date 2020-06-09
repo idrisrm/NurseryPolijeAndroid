@@ -2,6 +2,7 @@ package com.example.nurserypolije.ui.notifications;
 import com.example.nurserypolije.KeranjangActivity;
 import com.example.nurserypolije.Kritik;
 import com.example.nurserypolije.PetaLokasi;
+import com.example.nurserypolije.TagihanActivity;
 import com.example.nurserypolije.config.restServer;
 
 import android.app.ProgressDialog;
@@ -92,6 +93,23 @@ public class NotificationsFragment extends Fragment {
                 (getActivity(), android.R.layout.simple_list_item_1, item);
 
         pesanan.setAdapter(arrayAdapter);
+        pesanan.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String dipilih = (String) parent.getItemAtPosition(position);
+
+                if (dipilih == "Tagihan")
+                {
+                    Intent tagihan = new Intent(getActivity(), TagihanActivity.class);
+                    startActivity(tagihan);
+//                    Toast.makeText( getActivity(), "Peta Lokasi Nursery Polije", Toast.LENGTH_SHORT ).show();
+                }else{
+                }
+
+            }
+        });
+
+
 
         //bagian listview fitur
         fitur_lainnya = root.findViewById(R.id.lv_tambahan);
@@ -119,8 +137,9 @@ public class NotificationsFragment extends Fragment {
                     Intent pindah = new Intent(getActivity(), PetaLokasi.class);
                     startActivity(pindah);
                     Toast.makeText( getActivity(), "Peta Lokasi Nursery Polije", Toast.LENGTH_SHORT ).show();
-                }else{
-
+                }else if(dipilih == "Kritik Dan Saran"){
+                    Intent kritik = new Intent(getActivity(), LoginActivity.class);
+                    startActivity(kritik);
                 }
 
             }
