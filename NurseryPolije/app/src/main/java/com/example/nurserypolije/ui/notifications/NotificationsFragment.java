@@ -231,7 +231,7 @@ public class NotificationsFragment extends Fragment {
                                     String ketdb = object.getString("waktu_pembuatan").trim();
                                     urlfoto = object.getString("foto");
 
-                                    Picasso.get().load(urlfoto).into(fotoProfile);
+                                    Picasso.get().load(restServer.URL_FOTO_PROFILE + urlfoto).into(fotoProfile);
 
                                     namaprofile.setText(namadb);
                                     keterangan.setText("Bergabung Sejak " + ketdb);

@@ -28,7 +28,7 @@ import java.util.Map;
 
 public class CheckOutActivity extends AppCompatActivity {
     String idTransaksi, totalHarga, email, alamat;
-    String url = restServer.URL_CHECKOUT_GET;
+    String url = restServer.URL_CHECKOUT;
     TextView tvTotalHarga;
     SessionManager sessionManager;
     EditText etAlamat;

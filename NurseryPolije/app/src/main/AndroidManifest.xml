@@ -59,6 +59,7 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".UbahProfile" />
         <activity android:name=".LupaPassword" />
+        <activity android:name=".CheckOutActivity" />
         <activity
             android:name=".MainActivity"
             android:label="Nursery Polije"></activity>
