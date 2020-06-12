@@ -34,16 +34,16 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/Kemb"
+        android:id="@+id/Batal"
         style="@style/loginButton"
         android:layout_width="124dp"
         android:layout_height="36dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginRight="65dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="120dp"
         android:background="@drawable/kembali"
-        android:text="Kembali" />
+        android:text="Batal" />
 
     <Button
         android:id="@+id/Kir"
@@ -53,9 +53,21 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="65dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="120dp"
         android:background="@drawable/kembali"
         android:text="Kirim" />
+
+    <TextView
+        style="@style/viewParent"
+        android:id="@+id/pesan"
+        android:text=""
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="@dimen/newsMoreTextSize"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="170dp"/>
 
     <TextView
         style="@style/headerText"

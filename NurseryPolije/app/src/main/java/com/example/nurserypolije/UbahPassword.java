@@ -108,7 +108,7 @@ public class UbahPassword extends AppCompatActivity {
         progressDialog.setMessage("Tunggu Sebentar");
         progressDialog.show();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+        StringRequest stringRequest = new StringRequest(Request.Method.PUT, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

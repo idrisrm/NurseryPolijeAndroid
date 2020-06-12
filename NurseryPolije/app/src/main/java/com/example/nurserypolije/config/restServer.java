@@ -22,23 +22,23 @@ public class restServer {
 
     //URL Beranda
     public static final String URL_BERANDA = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Beranda";
-//    public static final String URL_BERANDA = "http://192.168.43.55/nuporyV2/Justify/rest_ci/Beranda"; //ip sayyid
+//    public static final String URL_BERANDA = "http://192.168.18.18/nuporyV2/Justify/rest_ci/Beranda"; //ip sayyid
     // public static final String URL_BERANDA = "http://192.168.43.11/nuporyV2/Justify/rest_ci/Beranda"; //ip Ridho
 
     //URL Keranjang
     public static final String URL_KERANJANG = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Transaksi/Keranjang";
-//    public static final String URL_KERANJANG = "http://192.168.43.55/nuporyV2/Justify/rest_ci/Transaksi/Keranjang"; //ip sayyid
+//    public static final String URL_KERANJANG = "http://192.168.18.18/nuporyV2/Justify/rest_ci/Transaksi/Keranjang"; //ip sayyid
 
     //URL ubahProfil
     //public static final String URL_UBAH_PROFILE = "http://192.168.43.11/nuporyV2/Justify/rest_ci/Profile/ubahProfil"; //ip Ridho
-    public static final String URL_UBAH_PROFILE = "http://192.168.43.55/nuporyV2/Justify/rest_ci/Profile/ubahProfil"; //ip Sayyid
+    public static final String URL_UBAH_PROFILE = "http://192.168.18.18/nuporyV2/Justify/rest_ci/Profile/ubahProfil"; //ip Sayyid
 
     //URL Keranjang User
     public static final String URL_KERANJANG_USER = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Transaksi/KeranjangUser";
-//    public static final String URL_KERANJANG_USER = "http://192.168.43.55/nuporyV2/Justify/rest_ci/Transaksi/KeranjangUser"; // ip sayyid
+//    public static final String URL_KERANJANG_USER = "http://192.168.18.18/nuporyV2/Justify/rest_ci/Transaksi/KeranjangUser"; // ip sayyid
 
     //URL Kritik
-    public static final String URL_KRITIK = "http://192.168.43.55/nuporyV2/Justify/rest_ci/Kritik";
+    public static final String URL_KRITIK = "http://192.168.18.18/nuporyV2/Justify/rest_ci/Kritik"; // ip sayyid
 
     //URL CheckOut
     public static final String URL_CHECKOUT = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Transaksi/CheckOut";
