@@ -45,7 +45,7 @@ public class TagihanAdapter extends RecyclerView.Adapter<TagihanAdapter.HolderDa
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent detail = new Intent(holder.itemView.getContext(), LoginActivity.class);
+                Intent detail = new Intent(holder.itemView.getContext(), DetailTagihan.class);
                 detail.putExtra("ID_TRANSAKSI", holder.id_transaksi);
                 holder.itemView.getContext().startActivity(detail);
             }
