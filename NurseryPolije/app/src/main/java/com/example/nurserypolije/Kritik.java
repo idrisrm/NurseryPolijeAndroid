@@ -20,6 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.nurserypolije.config.restServer;
+import com.example.nurserypolije.ui.notifications.NotificationsFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,11 +29,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Kritik extends AppCompatActivity {
-    EditText Email;
-    TextView kritik,pesan;
+    EditText Email, kritik;
+    TextView pesan;
     Button batal, kirim;
     Boolean cek;
-    String EmailHolder, Kritik;
+    String email, Kritik;
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     SessionManager sessionManager;
@@ -53,7 +54,7 @@ public class Kritik extends AppCompatActivity {
         batal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent batal = new Intent(Kritik.this, SettingProfileActivity.class);
+                Intent batal = new Intent(Kritik.this, NotificationsFragment.class);
                 startActivity(batal);
             }
         });
@@ -74,13 +75,17 @@ public class Kritik extends AppCompatActivity {
     //cek form kosong atau tidak
     public void CekForm()
     {
-        EmailHolder = Email.getText().toString().trim();
         Kritik = kritik.getText().toString().trim();
-        if (TextUtils.isEmpty(EmailHolder) || TextUtils.isEmpty(Kritik)){
+        if (TextUtils.isEmpty(Kritik)){
             cek = false;
         }else{
             cek = true;
         }
+
+
+        //mengambil email dari session manager
+        HashMap<String, String> user = sessionManager.getUserDetail();
+        email = user.get(sessionManager.EMAIL);
     }
 
     //Fungsi Kirim Kritik
@@ -121,8 +126,7 @@ public class Kritik extends AppCompatActivity {
         {
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-
-                params.put("email", EmailHolder);
+                params.put("email", email);
                 params.put("isi_kritik", Kritik);
                 return params;
             }

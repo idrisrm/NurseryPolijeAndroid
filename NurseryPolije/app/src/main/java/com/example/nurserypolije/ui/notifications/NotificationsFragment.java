@@ -138,7 +138,7 @@ public class NotificationsFragment extends Fragment {
                     startActivity(pindah);
                     Toast.makeText( getActivity(), "Peta Lokasi Nursery Polije", Toast.LENGTH_SHORT ).show();
                 }else if(dipilih == "Kritik Dan Saran"){
-                    Intent kritik = new Intent(getActivity(), LoginActivity.class);
+                    Intent kritik = new Intent(getActivity(), Kritik.class);
                     startActivity(kritik);
                 }
 
