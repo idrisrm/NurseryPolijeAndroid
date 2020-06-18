@@ -17,6 +17,7 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -26,7 +27,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -40,8 +43,10 @@ import java.util.Map;
 public class DetailTagihan extends AppCompatActivity {
     String id_transaksi;
     String urltagihan = restServer.URL_TAGIHAN;
+    String urldetail = restServer.URL_DETAIL_TAGIHAN;
     Button pilihFoto, uploadBukti;
     ImageView ivBukti;
+    TextView Tagihan;
     Bitmap bitmap;
     final int CODE_GALLERY_REQUEST = 999;
     @Override
@@ -53,6 +58,7 @@ public class DetailTagihan extends AppCompatActivity {
         pilihFoto = findViewById(R.id.btnPilihFoto);
         uploadBukti = findViewById(R.id.btnUpload);
         ivBukti = findViewById(R.id.ivBukti);
+        Tagihan = findViewById(R.id.tvTagihan);
 
         pilihFoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +76,7 @@ public class DetailTagihan extends AppCompatActivity {
                 Tagihan();
             }
         });
+        DetailTagihan();
     }
 
     @Override
@@ -150,6 +157,53 @@ public class DetailTagihan extends AppCompatActivity {
 
         String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
         return  encodedImage;
+    }
+
+
+    private void DetailTagihan() {
+        StringRequest sendData = new StringRequest(Request.Method.GET, urldetail + "?id_transaksi=" + id_transaksi, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    String success = jsonObject.getString("success");
+                    String message = jsonObject.getString("message");
+                    JSONArray jsonArray = jsonObject.getJSONArray("tagihan");
+                    if (success.equals("1")) {
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject object = jsonArray.getJSONObject(i);
+
+                            String tagihan = object.getString("total").trim();
+                            String bukti = object.getString("bukti").trim();
+                            Tagihan.setText( "Tagihan Anda sebesar : " + tagihan);
+                            if(bukti.equals("")){
+                                Picasso.get().load(restServer.URL_FOTO_BUKTI + "placeholder.jpg").into(ivBukti);
+                            }else {
+                                Picasso.get().load(restServer.URL_FOTO_BUKTI + bukti).into(ivBukti);
+                            }
+                        }
+                    } else {
+                        Toast.makeText(DetailTagihan.this, message.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(DetailTagihan.this, e.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(DetailTagihan.this, error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            public Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                return params;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(DetailTagihan.this);
+        requestQueue.add(sendData);
     }
 
 }
