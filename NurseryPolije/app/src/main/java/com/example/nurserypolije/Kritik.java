@@ -21,6 +21,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.nurserypolije.config.restServer;
 import com.example.nurserypolije.ui.notifications.NotificationsFragment;
+import com.example.nurserypolije.ui.notifications.NotificationsViewModel;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -54,7 +55,7 @@ public class Kritik extends AppCompatActivity {
         batal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent batal = new Intent(Kritik.this, NotificationsFragment.class);
+                Intent batal = new Intent(Kritik.this, MainActivity.class);
                 startActivity(batal);
             }
         });
