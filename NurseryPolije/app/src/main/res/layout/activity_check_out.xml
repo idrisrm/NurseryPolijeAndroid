@@ -7,103 +7,122 @@
     tools:context=".CheckOutActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:paddingHorizontal="20dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/login_shape_bk">
 
         <TextView
             android:id="@+id/tvJudul"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Check Out Bunga"
-            android:textSize="18dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textAlignment="center"/>
-
-        <TextView
-            android:id="@+id/tvKeterangan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/lowred"
-            android:text="Masukan Data Dengan Benar Agar Transaksi Anda Tidak Terjadi Masalah"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvJudul"/>
-
-        <TextView
-            android:id="@+id/tvAlamat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Alamat Pengiriman"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvKeterangan"/>
-
-        <EditText
-            android:id="@+id/etAlamat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvAlamat"/>
-
-        <TextView
-            android:id="@+id/tvTotalHarga"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Total Harga :"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etAlamat"/>
-
-        <TextView
-            android:id="@+id/tvTotalHargaDB"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Rp. 200.000"
-            android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTotalHarga"/>
+            android:textStyle="bold"
+            android:textColor="@color/putih"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="18dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
+        android:background="@drawable/check_shape_bk"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:id="@+id/btnKembaliCheckOut"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnCheckOutCheckOut"
+            android:id="@+id/btnCheckOutCheckOut"
+            android:layout_width="154dp"
+            android:layout_height="38dp"
+            android:background="@drawable/button"
+            android:text="Check Out"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="Kembali"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnKembaliCheckOut"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/btnCheckOutCheckOut"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/btnKembaliCheckOut"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:text="Check Out"
+            android:id="@+id/btnKembaliCheckOut"
+            android:background="@drawable/button"
+            android:layout_width="154dp"
+            android:layout_height="38dp"
+            android:text="Kembali"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnCheckOutCheckOut"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <TextView
+        android:id="@+id/tvTotalHarga"
+        android:paddingHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:text="Total Harga :"
+        android:textAlignment="viewEnd"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvTotalHargaDB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTotalHargaDB"
+        android:paddingHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="Rp. 200.000"
+        android:textAlignment="viewEnd"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvKeterangan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Masukan Alamat Dengan Benar Agar Transaksi Anda Tidak Terjadi Masalah"
+        android:textAlignment="center"
+        android:textColor="@color/lowred"
+        app:layout_constraintTop_toBottomOf="@+id/etAlamat"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/etAlamat"
+        android:layout_width="375dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAlamat" />
+
+    <TextView
+        android:id="@+id/tvAlamat"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Alamat Pengiriman"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

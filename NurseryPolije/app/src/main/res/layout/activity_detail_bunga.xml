@@ -6,66 +6,91 @@
     android:layout_height="match_parent"
     tools:context=".DetailBunga">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/login_shape_bk">
+
+        <TextView
+            android:id="@+id/tvJudul"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Detail Bunga"
+            android:textAlignment="center"
+            android:textColor="@color/putih"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/bungaHabis"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/lowred"
-                android:elevation="1dp"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="Stok Habis"
-                android:textColor="@android:color/white"
-                android:visibility="gone"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
+                android:paddingHorizontal="20dp"
                 android:id="@+id/ivBunga"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/placeholder"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/ivBunga"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
-            android:id="@+id/tvNamaBunga"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:maxLines="3"
-            android:textColor="#000"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivBunga" />
+                android:id="@+id/tvNamaBunga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:maxLines="3"
+                android:text="Nama bunga"
+                android:textColor="#000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivBunga" />
 
             <TextView
                 android:id="@+id/tvHargaBunga"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:text="Rp. 5000"
                 app:layout_constraintStart_toStartOf="@+id/tvNamaBunga"
-                app:layout_constraintTop_toBottomOf="@+id/tvNamaBunga"/>
+                app:layout_constraintTop_toBottomOf="@+id/tvNamaBunga" />
 
             <TextView
                 android:id="@+id/tvStok"
@@ -75,7 +100,6 @@
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="@+id/tvHargaBunga"
                 app:layout_constraintTop_toBottomOf="@+id/tvHargaBunga" />
-
 
 
             <TextView
@@ -90,16 +114,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvStok"/>
+                app:layout_constraintTop_toBottomOf="@+id/tvStok" />
 
-            <ProgressBar
-                android:id="@+id/progressbar"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/bungaHabis"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@+id/ivBunga"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
+                android:background="@color/lowred"
+                android:elevation="1dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Stok Habis"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -107,28 +137,36 @@
     </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
+        android:background="@drawable/check_shape_bk"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
             android:id="@+id/btnKeranjang"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnBeli"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="154dp"
+            android:layout_height="38dp"
+            android:background="@drawable/button"
             android:text="Keranjang"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnBeli"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/btnBeli"
             android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/btnKeranjang"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="38dp"
+            android:background="@drawable/button"
             android:text="Beli"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnKeranjang"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
 
