@@ -4,54 +4,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="20dp"
     tools:context=".DetailTagihan">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/login_shape_bk">
+
+        <TextView
+            android:id="@+id/tvJudul"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Upload bukti pembayaran"
+            android:textAlignment="center"
+            android:textColor="@color/putih"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <ImageView
+        android:paddingHorizontal="20dp"
         android:id="@+id/ivBukti"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/placeholder"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
 
     <Button
         android:id="@+id/btnPilihFoto"
+        android:background="@drawable/button1"
+        android:layout_width="200dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="10dp"
+        android:text="Pilih Foto"
+        android:textStyle="bold"
+        android:textColor="@color/putih"
+        app:layout_constraintBottom_toTopOf="@+id/btnUpload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:paddingHorizontal="20dp"
+        android:id="@+id/tvTagihan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pilih Foto"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="Tagihan Anda sebesar : "
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivBukti"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWarn" />
+
+    <TextView
+        android:id="@+id/tvWarn"
+        android:paddingHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Pastikan anda Mentransfer nominal sesuai besar tagihan agar pesanan anda bisa diproses"
+        android:textAlignment="center"
+        android:textColor="@color/lowred"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBukti" />
 
     <Button
         android:id="@+id/btnUpload"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:background="@drawable/button1"
+        android:layout_width="200dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="20dp"
         android:text="Upload Bukti"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        android:textColor="@color/putih"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPilihFoto"/>
-
-    <TextView
-        android:id="@+id/tvTagihan"
-        android:textSize="18dp"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="Tagihan Anda sebesar : "
-        app:layout_constraintTop_toBottomOf="@+id/btnUpload"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/lowred"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTagihan"
-        android:text="Pastikan anda Mentransfer nominal sesuai besar tagihan agar pesanan anda bisa diproses"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="biru">#FF000000</color>
     <color name="lowred">#ff7d7d</color>
+    <color name="putih">#FFFFFF</color>
 
     <!--colors for modern ui-->
     <color name="whiteTextColor">#fff</color>
