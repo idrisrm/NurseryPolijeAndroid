@@ -69,9 +69,10 @@ public class UbahPassword extends AppCompatActivity {
                 cekform();
                 if(cek)
                 {
+
                     ubahpass();
-//                    Intent pindah = new Intent(UbahPassword.this, UbahProfile.class);
-//                    startActivity(pindah);
+//                  Intent pindah = new Intent(UbahPassword.this, UbahProfile.class);
+//                  startActivity(pindah);
                 }else{
                     pesan.setText("Harap isi Semua Field!");
                 }
@@ -82,6 +83,8 @@ public class UbahPassword extends AppCompatActivity {
         //mengambil email dari session manager
         HashMap<String, String> user = sessionManager.getUserDetail();
         email = user.get(sessionManager.EMAIL);
+
+        sessionManager.checkLogin();
     }
 
 

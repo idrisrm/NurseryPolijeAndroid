@@ -34,7 +34,7 @@ public class SettingProfileActivity extends AppCompatActivity {
 
 
         btn_logout = findViewById(R.id.logout);
-        sessionManager = new SessionManager(this);
+        sessionManager = new SessionManager(SettingProfileActivity.this);
 
         listView = findViewById(R.id.listviewsetting);
         String[] setting = new String[] {
@@ -54,11 +54,12 @@ public class SettingProfileActivity extends AppCompatActivity {
                 String dipilih = (String) parent.getItemAtPosition(position);
 
                 if (dipilih == "Ubah Profile"){
-//                    Intent i = new Intent(SettingProfileActivity.this, LoginActivity.class);
-////                    startActivity(i);
-                    Toast.makeText(SettingProfileActivity.this, "Ubah Profile", Toast.LENGTH_SHORT).show();
+                  Intent i = new Intent(SettingProfileActivity.this, UbahProfile.class);
+                  startActivity(i);
+                  Toast.makeText(SettingProfileActivity.this, "Ubah Profile", Toast.LENGTH_SHORT).show();
                 }else if (dipilih == "Ubah Password"){
-
+                    Intent a = new Intent(SettingProfileActivity.this, UbahPassword.class);
+                    startActivity(a);
                     Toast.makeText(SettingProfileActivity.this, "Ubah Password", Toast.LENGTH_SHORT).show();
                 }
 
