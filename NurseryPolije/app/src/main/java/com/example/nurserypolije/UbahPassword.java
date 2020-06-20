@@ -18,6 +18,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.nurserypolije.config.restServer;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -35,8 +36,7 @@ public class UbahPassword extends AppCompatActivity {
     RequestQueue requestQueue;
     SessionManager sessionManager;
     TextView pesan;
-    //String url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Profile/ubah";
-    String url = "http://192.168.18.18/nuporyV2/Justify/rest_ci/index.php/Profile/ubah"; //ip sayyid
+    String url = restServer.URL_UBAH_PASSWORD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -55,4 +55,7 @@ public static final String URL_BERANDA = "http://192.168.43.55/nuporyV2/Justify/
   //  public static final String URL_DETAIL_TAGIHAN = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Transaksi/DetailTagihan";
     public static final String URL_DETAIL_TAGIHAN = "http://192.168.43.55/nuporyV2/Justify/rest_ci/Transaksi/DetailTagihan"; // ip sayyid
 
+    //URL Ubah Password
+    public static final String URL_UBAH_PASSWORD = "http://192.168.43.55/nuporyV2/Justify/rest_ci/index.php/Profile/ubah"; //ip sayyid
+
 }
