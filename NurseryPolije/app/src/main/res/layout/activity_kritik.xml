@@ -5,163 +5,164 @@
     android:orientation="vertical"
     style="@style/loginParent"
     tools:context=".Kritik">
-    <ScrollView
-        style="@style/parent">
-        <RelativeLayout
-            style="@style/parent">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:weightSum="12">
 
-                <LinearLayout
-                    style="@style/parent"
-                    android:layout_weight="3"
-                    android:background="@drawable/login_shape_bk"
-                    android:orientation="vertical">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/login_shape_bk">
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        style="@style/parent"
-                        android:contentDescription="login background"
-                        android:layout_width="match_parent"
-                        android:src="@drawable/ic_login_bk" />
+        <TextView
+            android:id="@+id/tvJudul"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Kritik dan Saran"
+            android:textStyle="bold"
+            android:textColor="@color/putih"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="18dp" />
 
-                </LinearLayout>
-            </LinearLayout>
-
-        </RelativeLayout>
-    </ScrollView>
-
-    <Button
-        android:id="@+id/Batal"
-        style="@style/loginButton"
-        android:layout_width="90dp"
-        android:layout_height="27dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="50dp"
-        android:layout_marginBottom="129dp"
-        android:background="@drawable/kembali"
-        android:text="Batal" />
-
-    <Button
-        android:id="@+id/Kir"
-        style="@style/loginButton"
-        android:layout_width="90dp"
-        android:layout_height="27dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginBottom="129dp"
-        android:background="@drawable/kembali"
-        android:text="Kirim" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        style="@style/viewParent"
         android:id="@+id/pesan"
+        style="@style/viewParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/kritik"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="20dp"
         android:text=""
+        android:textAlignment="center"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="@dimen/newsMoreTextSize"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="170dp"/>
-
-    <TextView
-        style="@style/headerText"
-        android:layout_gravity="center"
-        android:layout_marginTop="60dp"
-        android:textSize="26dp"
-        android:text="Kritik Dan Saran" />
+        android:textSize="@dimen/newsMoreTextSize" />
 
     <EditText
         android:id="@+id/kritik"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginBottom="201dp"
+        android:layout_width="333dp"
+        android:layout_height="150dp"
+        android:layout_alignTop="@+id/tulis"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="top"
         android:background="@drawable/border_kritik"
         android:ems="10"
-        android:inputType="textPersonName"
-         />
+        android:inputType="textMultiLine"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp"/>
 
     <TextView
         android:id="@+id/tulis"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginBottom="320dp"
+        android:layout_marginBottom="300dp"
+        android:paddingHorizontal="20dp"
+        android:text="Kritik dan Saran"
         android:textColor="@color/biru"
-        android:textSize="20dp"
-        android:text="Kritik dan Saran" />
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/tls1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="200dp"
+        android:layout_below="@+id/constraintLayout3"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="20dp"
+        android:text="Berikan Kritik dan Saran Kepada Kami Tentang:"
         android:textColor="@color/primaryTextColor"
-        android:textSize="20dp"
-        android:text="Berikan Kritik dan Saran Kepada Kami Tentang:" />
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/tls2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="260dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="40dp"
+        android:layout_below="@+id/tls1"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="20dp"
+        android:text="1. Permasalahan selama menggunakan aplikasi ini"
         android:textColor="@color/biru"
-        android:textSize="15dp"
-        android:text="1. Permasalahan selama menggunakan aplikasi ini" />
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/tls3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tls2"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="20dp"
+        android:text="2. Kekurangan aplikasi ini"
         android:textColor="@color/biru"
-        android:textSize="15dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="300dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="40dp"
-        android:text="2. Kekurangan aplikasi ini" />
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/tls4"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="320dp"
-        android:textSize="15dp"
+        android:layout_below="@+id/tls3"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="20dp"
+        android:text="3. Tampilan aplikasi ini"
         android:textColor="@color/biru"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="40dp"
-        android:text="3. Tampilan aplikasi ini" />
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/tls5"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="340dp"
-        android:layout_marginLeft="40dp"
+        android:layout_below="@+id/tls4"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="20dp"
+        android:text="4. Dsb"
         android:textColor="@color/biru"
-        android:textSize="15dp"
-        android:text="4. Dsb" />
+        android:textSize="15dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/aksi"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/check_shape_bk"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/Batal"
+            android:layout_width="150dp"
+            android:layout_height="38dp"
+            android:background="@drawable/button"
+            android:text="BATAL"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/Kir"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/Kir"
+            android:layout_width="150dp"
+            android:layout_height="38dp"
+            android:background="@drawable/button"
+            android:text="KIRIM"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Batal"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
 
-    />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </RelativeLayout>
