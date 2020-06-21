@@ -1,4 +1,5 @@
 package com.example.nurserypolije.ui.notifications;
+import com.example.nurserypolije.DikemasActivity;
 import com.example.nurserypolije.FrequentlyAskQuestion;
 import com.example.nurserypolije.KeranjangActivity;
 import com.example.nurserypolije.Kritik;
@@ -71,7 +72,7 @@ public class NotificationsFragment extends Fragment {
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     String Url = restServer.URL_PROFILE;
-    String id, urlfoto;
+    String id, urlfoto, EMAIL;
     private NotificationsViewModel notificationsViewModel;
     @BindView(R.id.foto) com.mikhaellopez.circularimageview.CircularImageView fotoProfile;
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -104,7 +105,9 @@ public class NotificationsFragment extends Fragment {
                     Intent tagihan = new Intent(getActivity(), TagihanActivity.class);
                     startActivity(tagihan);
 //                    Toast.makeText( getActivity(), "Peta Lokasi Nursery Polije", Toast.LENGTH_SHORT ).show();
-                }else{
+                }else if (dipilih == "Dikemas"){
+                    Intent dikemas = new Intent(getActivity(), DikemasActivity.class);
+                    startActivity(dikemas);
                 }
 
             }
@@ -179,15 +182,23 @@ public class NotificationsFragment extends Fragment {
         HashMap<String, String> user = sessionManager.getUserDetail();
         id = user.get(sessionManager.ID);
 
+
+
+        //data
+        sessionManager = new SessionManager(getActivity());
+        //mengambil ID dari session manager
+        HashMap<String, String> cek = sessionManager.getUserDetail();
+        EMAIL = cek.get(sessionManager.EMAIL);
         // jika keranjang dipencet
-        keranjang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sessionManager.checkLogin();
-                Intent i = new Intent(getContext(), KeranjangActivity.class);
-                startActivity(i);
-            }
-        });
+            keranjang.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(getContext(), KeranjangActivity.class);
+                    startActivity(i);
+                }
+            });
+
+
 
         //jika setting di pencet
         ic_setting.setOnClickListener(new View.OnClickListener() {
@@ -198,8 +209,6 @@ public class NotificationsFragment extends Fragment {
                 startActivity(i);
             }
         });
-
-        //jika
 
 
         //jika tombol login dipencet

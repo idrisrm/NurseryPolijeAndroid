@@ -79,6 +79,7 @@ public class KeranjangActivity extends AppCompatActivity {
         HashMap<String, String> user = sessionManager.getUserDetail();
         email = user.get(sessionManager.EMAIL);
 
+        sessionManager.checkLogin();
         Keranjang();
     }
 

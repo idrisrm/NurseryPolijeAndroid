@@ -69,4 +69,8 @@ public class restServer {
      public static final String URL_UBAH_PASSWORD = "http://192.168.43.55/nuporyV2/Justify/rest_ci/index.php/Profile/ubah"; //ip sayyid
     // public static final String URL_UBAH_PASSWORD = "http://192.168.149.2/nuporyV2/Justify/rest_ci/index.php/Profile/ubah"; //ip ridho
 
+    //URL Dikemas
+    // public static final String URL_DIKEMAS = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Transaksi/Dikemas"; //ip idris
+    public static final String URL_DIKEMAS = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Transaksi/Dikemas"; // ip sayyid
+
 }
