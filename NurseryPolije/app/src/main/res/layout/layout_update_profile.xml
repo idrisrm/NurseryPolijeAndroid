@@ -1,76 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     style="@style/loginParent"
     tools:context=".LoginActivity">
-    <ScrollView
-        style="@style/parent">
-        <RelativeLayout
-            android:id="@+id/layout_0"
-            style="@style/parent">
-            <LinearLayout
-                android:id="@+id/layout_1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:weightSum="12"
-                android:background="@drawable/login_shape_bk">
 
-                <TextView
-                    android:id="@+id/text_Update"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Update Profile"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:textAlignment="center"
-                    android:textColor="#FFF"
-                    android:layout_gravity="center"/>
-            </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/login_shape_bk">
 
-        </RelativeLayout>
-    </ScrollView>
+        <TextView
+            android:id="@+id/tvJudul"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Ubah Profil"
+            android:textStyle="bold"
+            android:textColor="@color/putih"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="18dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_edit"
         android:layout_width="match_parent"
         android:layout_height="343dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="67dp">
-
-        <com.mikhaellopez.circularimageview.CircularImageView
-            android:id="@+id/foto_profile"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="5dp"
-            android:src="@drawable/default_profile"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/btn_edit_foto"
-            android:layout_width="178dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/foto_profile"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="8dp"
-            android:text="Ganti Foto Profile"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/foto_profile" />
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
         <EditText
             android:id="@+id/edit_nama"
@@ -106,7 +74,6 @@
 
         </EditText>
 
-
         <Spinner
             android:id="@+id/edit_jk"
             android:layout_width="173dp"
@@ -117,32 +84,66 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/edit_notel"
-            app:layout_constraintTop_toBottomOf="@+id/edit_alamat">
-        </Spinner>
+            app:layout_constraintTop_toBottomOf="@+id/edit_alamat"></Spinner>
+
+        <TextView
+            android:id="@+id/btn_edit_foto"
+            android:layout_width="178dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/foto_profile"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:text="Ganti Foto Profile"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/foto_profile" />
+
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/foto_profile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/default_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/simpan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/layout_edit"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="162dp"
-        android:text="SIMPAN" />
+        android:layout_width="150dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="20dp"
+        android:text="SIMPAN"
+        android:textColor="@color/putih"
+        android:background="@drawable/button1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_edit" />
 
     <TextView
         android:id="@+id/pesan"
         style="@style/viewParent"
         android:layout_width="wrap_content"
-        android:layout_below="@+id/simpan"
-        android:layout_alignParentEnd="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="120dp"
-        android:gravity="center"
+        android:layout_marginTop="20dp"
         android:text=""
+        android:textAlignment="center"
+        android:paddingHorizontal="20dp"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="@dimen/newsMoreTextSize" />
-</RelativeLayout>
+        android:textSize="@dimen/newsMoreTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/simpan" />
+</androidx.constraintlayout.widget.ConstraintLayout>

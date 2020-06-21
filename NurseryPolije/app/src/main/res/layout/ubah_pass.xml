@@ -1,77 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <EditText
-        android:id="@+id/pslama"
-        android:layout_width="254dp"
-        android:layout_height="55dp"
-        android:ems="10"
-        android:inputType="text"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="410dp"
-        style="@style/modifiedEditText"
-        android:layout_marginLeft="50dp"
-        android:hint="@string/password_lama1"/>
-
-
-    <EditText
-        android:id="@+id/psbaru"
-        android:layout_width="254dp"
-        android:layout_height="55dp"
-        android:ems="10"
-        android:inputType="text"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="329dp"
-        android:layout_marginLeft="50dp"
-        style="@style/modifiedEditText"
-        android:hint="@string/password_baru1"/>
-
-    <EditText
-        android:id="@+id/konfir"
-        android:layout_width="254dp"
-        android:layout_height="55dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginBottom="249dp"
-        android:ems="10"
-        android:inputType="text"
-        style="@style/modifiedEditText"
-        android:hint="@string/konfirmasi_password1" />
+    <TextView
+        android:id="@+id/pesan4"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Pastikan password baru anda berbeda dengan password yg sebelumnya."
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        style="@style/viewParent"
         android:id="@+id/pesan"
+        style="@style/viewParent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="50dp"
+        android:paddingHorizontal="20dp"
         android:text=""
         android:textColor="@android:color/holo_red_dark"
         android:textSize="@dimen/newsMoreTextSize"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="210dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/konfir" />
+
+    <EditText
+        android:id="@+id/konfir"
+        style="@style/modifiedEditText"
+        android:layout_width="350dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/konfirmasi_password1"
+        android:inputType="textPassword"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/psbaru" />
+
+    <EditText
+        android:id="@+id/psbaru"
+        style="@style/modifiedEditText"
+        android:layout_width="350dp"
+        android:layout_height="55dp"
+        android:paddingHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/password_baru1"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pslama" />
+
+    <EditText
+        android:id="@+id/pslama"
+        style="@style/modifiedEditText"
+        android:layout_width="350dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/password_lama1"
+        android:inputType="textPassword"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pesan4" />
 
     <Button
         android:id="@+id/simp"
-        android:layout_width="153dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="106dp"
-        android:layout_marginBottom="140dp"
-        android:background="@drawable/custombutton"
-        android:text="Simpan" />
+        android:layout_width="150dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button1"
+        android:text="Simpan"
+        android:textColor="@color/putih"
+        app:layout_constraintBottom_toTopOf="@+id/btl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btl"
-        android:layout_width="153dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="106dp"
-        android:layout_marginBottom="80dp"
-        android:background="@drawable/custombutton"
-        android:text="Batal" />
-</RelativeLayout>
+        android:layout_width="150dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/button1"
+        android:textColor="@color/putih"
+        android:text="Batal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

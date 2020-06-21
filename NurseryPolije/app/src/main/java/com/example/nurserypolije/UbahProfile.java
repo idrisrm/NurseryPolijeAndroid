@@ -66,10 +66,12 @@ public class UbahProfile extends AppCompatActivity {
         simpan = findViewById(R.id.simpan);
         pesan = findViewById(R.id.pesan);
 
+
+        //cek login
+        sessionManager.checkLogin();
+
 //        mengambil data yg login dari session manager
         HashMap<String, String> user = sessionManager.getUserDetail();
-
-        //pengecekan sudah login atau tidak
         if (sessionManager.isLoggin() == true)
         {
             email = user.get(sessionManager.EMAIL);
@@ -94,6 +96,7 @@ public class UbahProfile extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     //cek form kosong atau tidak
