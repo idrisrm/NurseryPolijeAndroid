@@ -3,9 +3,9 @@ package com.example.nurserypolije.config;
 public class restServer {
 
     //URL login
-    // public static final String URL_LOGIN = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Auth";
+     public static final String URL_LOGIN = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Auth";
     // public static final String URL_LOGIN = "http://192.168.43.55/nuporyV2/Justify/rest_ci/Auth"; //ip sayyid
-    public static final String URL_LOGIN = "http://192.168.149.2/nuporyV2/Justify/rest_ci/Auth"; //ip Ridho
+//    public static final String URL_LOGIN = "http://192.168.149.2/nuporyV2/Justify/rest_ci/Auth"; //ip Ridho
 
     //URL foto profile
     // public static final String URL_FOTO_PROFILE = "http://192.168.43.243/nuporyV2/Justify/assets/img/foto/";
@@ -20,7 +20,7 @@ public class restServer {
     //URL foto bunga
      public static final String URL_FOTO_BUNGA = "http://192.168.43.243/nuporyV2/Justify/assets/img/fotobunga/";
     // public static final String URL_FOTO_BUNGA = "http://192.168.43.55/nuporyV2/Justify/assets/img/fotobunga/"; //ip sayyid
-     public static final String URL_FOTO_BUNGA = "http://192.168.149.2/nuporyV2/Justify/assets/img/fotobunga/"; //ip Ridho
+//     public static final String URL_FOTO_BUNGA = "http://192.168.149.2/nuporyV2/Justify/assets/img/fotobunga/"; //ip Ridho
 
     //URL Profile
     //  public static final String URL_PROFILE = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Profile";
@@ -69,4 +69,7 @@ public class restServer {
     // public static final String URL_UBAH_PASSWORD = "http://192.168.43.55/nuporyV2/Justify/rest_ci/index.php/Profile/ubah"; //ip sayyid
      public static final String URL_UBAH_PASSWORD = "http://192.168.149.2/nuporyV2/Justify/rest_ci/index.php/Profile/ubah"; //ip ridho
 
+
+    //URL Dikemas
+    public static final String URL_DIKEMAS = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Transaksi/Dikemas";
 }

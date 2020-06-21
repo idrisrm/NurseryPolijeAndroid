@@ -1,4 +1,5 @@
 package com.example.nurserypolije.ui.notifications;
+import com.example.nurserypolije.DikemasActivity;
 import com.example.nurserypolije.FrequentlyAskQuestion;
 import com.example.nurserypolije.KeranjangActivity;
 import com.example.nurserypolije.Kritik;
@@ -104,7 +105,9 @@ public class NotificationsFragment extends Fragment {
                     Intent tagihan = new Intent(getActivity(), TagihanActivity.class);
                     startActivity(tagihan);
 //                    Toast.makeText( getActivity(), "Peta Lokasi Nursery Polije", Toast.LENGTH_SHORT ).show();
-                }else{
+                }else if (dipilih == "Dikemas"){
+                    Intent dikemas = new Intent(getActivity(), DikemasActivity.class);
+                    startActivity(dikemas);
                 }
 
             }
