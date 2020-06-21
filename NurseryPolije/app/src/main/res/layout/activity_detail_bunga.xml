@@ -151,17 +151,17 @@
             android:text="Keranjang"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnBeli"
+            app:layout_constraintEnd_toStartOf="@+id/btnBtl"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/btnBeli"
+            android:id="@+id/btnBtl"
             android:layout_width="150dp"
             android:layout_height="38dp"
             android:background="@drawable/button"
-            android:text="Beli"
+            android:text="Batal"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

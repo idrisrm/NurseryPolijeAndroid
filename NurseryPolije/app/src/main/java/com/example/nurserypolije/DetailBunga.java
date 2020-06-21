@@ -37,7 +37,7 @@ SessionManager sessionManager;
 String url = restServer.URL_BERANDA;
 String urlkeranjang = restServer.URL_KERANJANG;
 String idBunga, email, id_status_transaksi, jumlah, totalharga;
-Button keranjang, beli;
+Button keranjang, batal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,7 @@ Button keranjang, beli;
         setContentView(R.layout.activity_detail_bunga);
 
         keranjang = findViewById(R.id.btnKeranjang);
+        batal = findViewById(R.id.btnBtl);
         namaBunga = findViewById(R.id.tvNamaBunga);
         Deskripsi = findViewById(R.id.tvDeskripsi);
         Stok = findViewById(R.id.tvStok);
@@ -68,6 +69,14 @@ Button keranjang, beli;
             @Override
             public void onClick(View v) {
                 keranjang();
+            }
+        });
+
+        batal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent batl = new Intent(DetailBunga.this, MainActivity.class);
+                startActivity(batl);
             }
         });
     }
