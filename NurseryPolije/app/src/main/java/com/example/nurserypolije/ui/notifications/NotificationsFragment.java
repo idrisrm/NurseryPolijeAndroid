@@ -70,7 +70,7 @@ public class NotificationsFragment extends Fragment {
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     String Url = restServer.URL_PROFILE;
-    String id, urlfoto;
+    String id, urlfoto, EMAIL;
     private NotificationsViewModel notificationsViewModel;
     @BindView(R.id.foto) com.mikhaellopez.circularimageview.CircularImageView fotoProfile;
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -175,15 +175,23 @@ public class NotificationsFragment extends Fragment {
         HashMap<String, String> user = sessionManager.getUserDetail();
         id = user.get(sessionManager.ID);
 
+
+
+        //data
+        sessionManager = new SessionManager(getActivity());
+        //mengambil ID dari session manager
+        HashMap<String, String> cek = sessionManager.getUserDetail();
+        EMAIL = cek.get(sessionManager.EMAIL);
         // jika keranjang dipencet
-        keranjang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sessionManager.checkLogin();
-                Intent i = new Intent(getContext(), KeranjangActivity.class);
-                startActivity(i);
-            }
-        });
+            keranjang.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(getContext(), KeranjangActivity.class);
+                    startActivity(i);
+                }
+            });
+
+
 
         //jika setting di pencet
         ic_setting.setOnClickListener(new View.OnClickListener() {
@@ -194,8 +202,6 @@ public class NotificationsFragment extends Fragment {
                 startActivity(i);
             }
         });
-
-        //jika
 
 
         //jika tombol login dipencet
