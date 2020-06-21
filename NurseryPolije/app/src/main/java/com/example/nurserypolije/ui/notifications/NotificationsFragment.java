@@ -1,4 +1,5 @@
 package com.example.nurserypolije.ui.notifications;
+import com.example.nurserypolije.FrequentlyAskQuestion;
 import com.example.nurserypolije.KeranjangActivity;
 import com.example.nurserypolije.Kritik;
 import com.example.nurserypolije.PetaLokasi;
@@ -140,6 +141,9 @@ public class NotificationsFragment extends Fragment {
                 }else if(dipilih == "Kritik Dan Saran"){
                     Intent kritik = new Intent(getActivity(), Kritik.class);
                     startActivity(kritik);
+                }else if (dipilih == "Bantuan") {
+                    Intent bantu = new Intent(getActivity(), FrequentlyAskQuestion.class);
+                    startActivity(bantu);
                 }
 
             }

@@ -30,4 +30,11 @@
     <color name="white">#FFFFFF</color>
 
     <color name="black_overlay">#66000000</color>
+
+
+    <!-- FAQ   -->
+    <color name="color1">#008577</color>
+    <color name="color2">#00574B </color>
+    <color name="black">#000</color>
+    <color name="gray">#a9a9a9</color>
 </resources>

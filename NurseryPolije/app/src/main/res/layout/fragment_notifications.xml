@@ -9,7 +9,7 @@
         android:id="@+id/rellay1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/grad"
+        android:background="@drawable/login_shape_bk"
         android:paddingBottom="15dp"
         android:layout_marginBottom="10dp">
 
@@ -56,27 +56,24 @@
 
         <Button
             android:id="@+id/login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
             android:layout_below="@+id/keranjang"
             android:layout_marginStart="150dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/btn_login_fragment"
-            android:textColor="#ffffff"
-            android:text="Login"
-            />
+            android:background="@drawable/button"
+            android:text="Login" />
 
         <Button
             android:id="@+id/daftar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
             android:layout_below="@+id/keranjang"
-            android:layout_toRightOf="@+id/login"
+            android:layout_marginLeft="26dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/btn_login_fragment"
-            android:text="Daftar"
-            android:textColor="#ffffff"
-            />
+            android:layout_toRightOf="@+id/login"
+            android:background="@drawable/button"
+            android:text="Daftar" />
 
         <ImageView
             android:id="@+id/keranjang"

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FrequentlyAskQuestion">
+
+
+    <ScrollView
+        style="@style/parent">
+        <RelativeLayout
+            style="@style/parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:weightSum="12">
+
+
+
+                <LinearLayout
+                    style="@style/parent"
+                    android:layout_weight="3"
+                    android:background="@drawable/login_shape_bk"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        style="@style/parent"
+                        android:contentDescription="login background"
+                        android:layout_width="match_parent"
+                        android:src="@drawable/ic_login_bk" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                style="@style/headerText"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:textSize="28dp"
+                android:text="Frequently Asked Question" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyle"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+</LinearLayout>

@@ -22,16 +22,16 @@
                 android:background="@drawable/home_shape_bk"
                 android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/judul"
-                        android:layout_marginTop="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:textSize="20dp"
-                        android:text="Nursery Polije"/>
 
+                <TextView
+                    android:id="@+id/judul"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Nursery Polije"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
 
                 <androidx.appcompat.widget.SearchView
                     android:layout_marginTop="25dp"
@@ -56,64 +56,22 @@
         android:layout_below="@+id/pencarian"
         style="@style/parent">
 
-        <LinearLayout
-            style="@style/parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/parent"
+            android:layout_height="30dp"
+            android:layout_width="match_parent">
 
-            <HorizontalScrollView
-                android:scrollbars="none"
-                android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="8dp"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:text="Selamat berbelanja"
+                android:paddingHorizontal="20dp"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    >
 
-                    <Button
-                        android:layout_width="70dp"
-                        android:layout_height="20dp"
-                        android:layout_marginRight="10dp"
-                        android:textColor="#7cb9de"
-                        android:background="@drawable/button_kategori"
-                        android:text="Krisan"
-                        />
-
-                    <Button
-                        android:layout_width="70dp"
-                        android:layout_height="20dp"
-                        android:layout_marginRight="10dp"
-                        android:textColor="#7cb9de"
-                        android:background="@drawable/button_kategori"
-                        android:text="Anggrek"
-                        />
-
-                    <Button
-                        android:layout_width="70dp"
-                        android:layout_height="20dp"
-                        android:layout_marginRight="10dp"
-                        android:textColor="#7cb9de"
-                        android:background="@drawable/button_kategori"
-                        android:text="Kaktus"
-                        />
-
-                    <Button
-                        android:layout_width="70dp"
-                        android:layout_height="20dp"
-                        android:layout_marginRight="10dp"
-                        android:textColor="#7cb9de"
-                        android:background="@drawable/button_kategori"
-                        android:text="Mawar"
-                        />
-
-                </LinearLayout>
-
-            </HorizontalScrollView>
-
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </RelativeLayout>
 
