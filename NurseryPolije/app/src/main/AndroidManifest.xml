@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DikemasActivity"></activity>
+        <activity android:name=".DikirimActivity"></activity>
+        <activity android:name=".DikemasActivity" />
         <activity android:name=".FrequentlyAskQuestion" />
         <activity android:name=".DetailTagihan" />
         <activity android:name=".TagihanActivity" />

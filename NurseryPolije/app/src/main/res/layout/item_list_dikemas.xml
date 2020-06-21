@@ -51,8 +51,8 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tvTglEvent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTglEvent"
+                app:layout_constraintStart_toStartOf="@+id/tvKeterangan"
+                app:layout_constraintTop_toBottomOf="@+id/tvKeterangan"
                 tools:text="@tools:sample/lorem/random" />
 
             <TextView
@@ -75,10 +75,10 @@
                 tools:text="@tools:sample/lorem/random" />
 
             <TextView
-                android:id="@+id/tvTglEvent"
+                android:id="@+id/tvKeterangan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvAlamatPengiriman"
+                android:layout_below="@id/tvAlamatPengirimanDikemas"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
