@@ -2,6 +2,11 @@ package com.example.nurserypolije.config;
 
 public class restServer {
 
+    //URL login
+    // public static final String URL_LOGIN = "http://192.168.43.243/nuporyV2/Justify/rest_ci/Auth";
+    // public static final String URL_LOGIN = "http://192.168.43.55/nuporyV2/Justify/rest_ci/Auth"; //ip sayyid
+    public static final String URL_LOGIN = "http://192.168.149.2/nuporyV2/Justify/rest_ci/Auth"; //ip Ridho
+
     //URL foto profile
     // public static final String URL_FOTO_PROFILE = "http://192.168.43.243/nuporyV2/Justify/assets/img/foto/";
     // public static final String URL_FOTO_PROFILE = "http://192.168.43.55/nuporyV2/Justify/assets/img/foto/"; //ip sayyid
