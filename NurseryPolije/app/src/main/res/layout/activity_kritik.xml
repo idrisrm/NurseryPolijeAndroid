@@ -21,11 +21,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Kritik dan Saran"
-            android:textStyle="bold"
             android:textColor="@color/putih"
             android:textAlignment="center"
             android:gravity="center"
-            android:textSize="18dp" />
+            android:textSize="35sp"
+            android:fontFamily="@font/signatra"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -58,7 +58,8 @@
         android:ems="10"
         android:inputType="textMultiLine"
         android:paddingHorizontal="10dp"
-        android:paddingVertical="10dp"/>
+        android:paddingVertical="10dp"
+        android:fontFamily="@font/bertina"/>
 
     <TextView
         android:id="@+id/tulis"
@@ -69,7 +70,8 @@
         android:paddingHorizontal="20dp"
         android:text="Kritik dan Saran"
         android:textColor="@color/biru"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:fontFamily="@font/bertina"/>
 
     <TextView
         android:id="@+id/tls1"
@@ -80,7 +82,8 @@
         android:paddingHorizontal="20dp"
         android:text="Berikan Kritik dan Saran Kepada Kami Tentang:"
         android:textColor="@color/primaryTextColor"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:fontFamily="@font/bertina"/>
 
     <TextView
         android:id="@+id/tls2"
@@ -91,7 +94,8 @@
         android:paddingHorizontal="20dp"
         android:text="1. Permasalahan selama menggunakan aplikasi ini"
         android:textColor="@color/biru"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:fontFamily="@font/bertina"/>
 
     <TextView
         android:id="@+id/tls3"
@@ -102,7 +106,8 @@
         android:paddingHorizontal="20dp"
         android:text="2. Kekurangan aplikasi ini"
         android:textColor="@color/biru"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:fontFamily="@font/bertina"/>
 
     <TextView
         android:id="@+id/tls4"
@@ -113,7 +118,8 @@
         android:paddingHorizontal="20dp"
         android:text="3. Tampilan aplikasi ini"
         android:textColor="@color/biru"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:fontFamily="@font/bertina"/>
 
     <TextView
         android:id="@+id/tls5"
@@ -124,7 +130,8 @@
         android:paddingHorizontal="20dp"
         android:text="4. Dsb"
         android:textColor="@color/biru"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:fontFamily="@font/bertina"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/aksi"
@@ -141,12 +148,12 @@
             android:layout_height="38dp"
             android:background="@drawable/button"
             android:text="BATAL"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/Kir"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:fontFamily="@font/bebas"/>
 
         <Button
             android:id="@+id/Kir"
@@ -154,12 +161,12 @@
             android:layout_height="38dp"
             android:background="@drawable/button"
             android:text="KIRIM"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/Batal"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:fontFamily="@font/bebas"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

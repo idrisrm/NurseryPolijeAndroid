@@ -25,8 +25,8 @@
 
                     <androidx.appcompat.widget.AppCompatImageView
                         style="@style/parent"
-                        android:contentDescription="login background"
                         android:layout_width="match_parent"
+                        android:contentDescription="login background"
                         android:src="@drawable/ic_login_bk" />
 
                 </LinearLayout>
@@ -35,8 +35,9 @@
                 style="@style/headerText"
                 android:layout_gravity="center"
                 android:layout_marginTop="60dp"
-                android:textSize="28dp"
-                android:text="Frequently Asked Question" />
+                android:textSize="50sp"
+                android:text="Frequently Asked Question"
+                android:fontFamily="@font/signatra"/>
 
 
         </RelativeLayout>

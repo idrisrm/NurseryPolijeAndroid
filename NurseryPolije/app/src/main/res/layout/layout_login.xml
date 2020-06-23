@@ -16,7 +16,8 @@
         <TextView
             style="@style/headerTextPrimary"
             android:text="@string/login"
-            android:layout_marginTop="@dimen/loginViewsMargin"/>
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:fontFamily="@font/cl_bold"/>
 
         <EditText
             android:id="@+id/etemail"
@@ -24,13 +25,15 @@
             android:layout_height="wrap_content"
             android:hint="@string/login_email_hint"
             android:inputType="textEmailAddress"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:fontFamily="@font/cl_bold"/>
         <EditText
             android:id="@+id/etpassword"
             style="@style/modifiedEditText"
             android:hint="@string/login_password_hint"
             android:maxLines="1"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:fontFamily="@font/cl_bold"/>
         <TextView
             android:id="@+id/lupa"
             style="@style/viewParent"
@@ -38,22 +41,27 @@
             android:textColor="@color/primaryTextColor"
             android:textSize="@dimen/newsMoreTextSize"
             android:layout_gravity="end"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/cl_bold"/>
+
         <TextView
-            style="@style/viewParent"
             android:id="@+id/pesan"
+            style="@style/viewParent"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:text=""
             android:textColor="@android:color/holo_red_dark"
             android:textSize="@dimen/newsMoreTextSize"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"/>
+            android:fontFamily="@font/bertina"/>
         <Button
             android:id="@+id/btnlogin"
             style="@style/loginButton"
             android:background="@drawable/custombutton"
             android:text="Login"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/loginViewsMargin"/>
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:fontFamily="@font/bebas"/>
         <TextView
             style="@style/parent"
             android:id="@+id/daftar"
@@ -61,6 +69,7 @@
             android:textStyle="bold"
             android:textColor="@color/primaryTextColor"
             android:text="Belum Punya Akun? Daftar disini"
-            android:layout_marginTop="@dimen/loginViewsMargin"/>
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:fontFamily="@font/cl_bold"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

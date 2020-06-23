@@ -19,12 +19,12 @@
             android:id="@+id/tvJudul"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Check Out Bunga"
-            android:textStyle="bold"
+            android:text="Checkout Bunga"
             android:textColor="@color/putih"
             android:textAlignment="center"
             android:gravity="center"
-            android:textSize="18dp" />
+            android:textSize="35sp"
+            android:fontFamily="@font/signatra"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -41,12 +41,12 @@
             android:layout_height="38dp"
             android:background="@drawable/button"
             android:text="Check Out"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnKembaliCheckOut"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:fontFamily="@font/bebas"/>
 
         <Button
             android:id="@+id/btnKembaliCheckOut"
@@ -54,12 +54,12 @@
             android:layout_width="154dp"
             android:layout_height="38dp"
             android:text="Kembali"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnCheckOutCheckOut"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:fontFamily="@font/bebas"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -72,11 +72,12 @@
         android:layout_marginBottom="20dp"
         android:text="Total Harga :"
         android:textAlignment="viewEnd"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tvTotalHargaDB"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/bertina"/>
 
     <TextView
         android:id="@+id/tvTotalHargaDB"
@@ -89,39 +90,46 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/bertina"/>
 
     <TextView
         android:id="@+id/tvKeterangan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:paddingHorizontal="20dp"
         android:text="Masukan Alamat Dengan Benar Agar Transaksi Anda Tidak Terjadi Masalah"
         android:textAlignment="center"
         android:textColor="@color/lowred"
         app:layout_constraintTop_toBottomOf="@+id/etAlamat"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="0dp"
+        android:fontFamily="@font/bertina"/>
 
     <EditText
         android:id="@+id/etAlamat"
-        android:layout_width="375dp"
+        android:layout_width="match_parent"
+        android:paddingHorizontal="20dp"
         android:layout_height="45dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAlamat" />
+        app:layout_constraintTop_toBottomOf="@+id/tvAlamat"
+        android:fontFamily="@font/bertina"/>
 
     <TextView
         android:id="@+id/tvAlamat"
-        android:layout_width="375dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:paddingHorizontal="20dp"
         android:text="Alamat Pengiriman"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+        android:fontFamily="@font/bertina"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

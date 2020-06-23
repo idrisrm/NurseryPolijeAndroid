@@ -31,7 +31,8 @@
                     android:gravity="center"
                     android:text="Nursery Polije"
                     android:textColor="@color/white"
-                    android:textSize="20dp" />
+                    android:textSize="35sp"
+                    android:fontFamily="@font/signatra"/>
 
                 <androidx.appcompat.widget.SearchView
                     android:layout_marginTop="25dp"

@@ -15,7 +15,8 @@
         android:id="@+id/tv_setting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Setting Profile" />
+        android:text="Setting Profile"
+        android:fontFamily="@font/cl_bold"/>
 
     <ListView
         android:layout_below="@+id/tv_setting"
@@ -33,5 +34,6 @@
         android:layout_marginLeft="10dp"
         android:background="#00a5ff"
         android:id="@+id/logout"
+        android:fontFamily="@font/bebas"
         />
 </RelativeLayout>

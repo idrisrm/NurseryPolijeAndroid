@@ -24,10 +24,10 @@
             android:text="Detail Bunga"
             android:textAlignment="center"
             android:textColor="@color/putih"
-            android:textSize="18dp"
-            android:textStyle="bold"
+            android:textSize="35sp"
             tools:layout_editor_absoluteX="20dp"
-            tools:layout_editor_absoluteY="0dp" />
+            tools:layout_editor_absoluteY="0dp"
+            android:fontFamily="@font/signatra"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -81,7 +81,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivBunga" />
+                app:layout_constraintTop_toBottomOf="@+id/ivBunga"
+                android:fontFamily="@font/bertina"/>
 
             <TextView
                 android:id="@+id/tvHargaBunga"
@@ -90,7 +91,8 @@
                 android:layout_marginStart="16dp"
                 android:text="Rp. 5000"
                 app:layout_constraintStart_toStartOf="@+id/tvNamaBunga"
-                app:layout_constraintTop_toBottomOf="@+id/tvNamaBunga" />
+                app:layout_constraintTop_toBottomOf="@+id/tvNamaBunga"
+                android:fontFamily="@font/bertina"/>
 
             <TextView
                 android:id="@+id/tvStok"
@@ -99,7 +101,8 @@
                 android:textColor="@android:color/black"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="@+id/tvHargaBunga"
-                app:layout_constraintTop_toBottomOf="@+id/tvHargaBunga" />
+                app:layout_constraintTop_toBottomOf="@+id/tvHargaBunga"
+                android:fontFamily="@font/bertina"/>
 
 
             <TextView
@@ -114,7 +117,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvStok" />
+                app:layout_constraintTop_toBottomOf="@+id/tvStok"
+                android:fontFamily="@font/bertina"/>
 
             <TextView
                 android:id="@+id/bungaHabis"
@@ -149,12 +153,12 @@
             android:layout_height="38dp"
             android:background="@drawable/button"
             android:text="Keranjang"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnBtl"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:fontFamily="@font/bebas"/>
 
         <Button
             android:id="@+id/btnBtl"
@@ -162,12 +166,12 @@
             android:layout_height="38dp"
             android:background="@drawable/button"
             android:text="Batal"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnKeranjang"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:fontFamily="@font/bebas"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

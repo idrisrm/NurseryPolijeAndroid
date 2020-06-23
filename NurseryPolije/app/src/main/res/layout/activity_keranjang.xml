@@ -21,12 +21,12 @@
             android:id="@+id/tvJudul"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Keranjang anda"
-            android:textStyle="bold"
+            android:text="Keranjang Anda"
             android:textColor="@color/putih"
             android:textAlignment="center"
             android:gravity="center"
-            android:textSize="18dp" />
+            android:textSize="35sp"
+            android:fontFamily="@font/signatra"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -88,12 +88,12 @@
             android:layout_width="150dp"
             android:layout_height="38dp"
             android:text="Kembali"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnCheckOutKeranjang"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:fontFamily="@font/bebas"/>
 
         <Button
             android:id="@+id/btnCheckOutKeranjang"
@@ -106,7 +106,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnKembaliKeranjang"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:fontFamily="@font/bebas"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

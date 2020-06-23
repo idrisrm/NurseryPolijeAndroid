@@ -20,13 +20,15 @@
             style="@style/headerTextPrimary"
             android:layout_marginTop="@dimen/loginViewsMargin"
             android:layout_margin="22dp"
-            android:text="@string/lupa_password" />
+            android:text="@string/lupa_password"
+            android:fontFamily="@font/cl_bold"/>
 
         <EditText
             android:id="@+id/emaill"
             style="@style/modifiedEditText"
             android:hint="@string/login_email_hint"
             android:inputType="text"
+            android:fontFamily="@font/cl_bold"
             android:maxLines="1" />
 
         <TextView
@@ -46,7 +48,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/loginViewsMargin"
             android:background="@drawable/custombutton"
-            android:text="Kirim" />
+            android:text="Kirim"
+            android:fontFamily="@font/bebas"/>
 
 
         <TextView
@@ -58,8 +61,9 @@
             android:layout_marginTop="10dp"
             android:text="Silakan cek email anda untuk mengganti password."
             android:textAlignment="center"
-            android:textStyle="bold"
-            android:textColor="@color/primaryTextColor" />
+            android:textSize="15sp"
+            android:textColor="@color/primaryTextColor"
+            android:fontFamily="@font/cl_bold"/>
 
 
     </LinearLayout>

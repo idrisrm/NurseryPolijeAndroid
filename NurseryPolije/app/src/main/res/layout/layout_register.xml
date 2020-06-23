@@ -16,6 +16,7 @@
         <TextView
             style="@style/headerTextPrimary"
             android:text="@string/register"
+            android:fontFamily="@font/cl_bold"
             android:layout_marginTop="@dimen/loginViewsMargin"/>
 
         <EditText
@@ -23,18 +24,21 @@
             style="@style/modifiedEditText"
             android:layout_height="wrap_content"
             android:hint="@string/regis_nama_hint"
+            android:fontFamily="@font/cl_bold"
             android:maxLines="1" />
         <EditText
             android:id="@+id/regis_notel"
             style="@style/modifiedEditText"
             android:hint="@string/regis_notel_hint"
+            android:fontFamily="@font/cl_bold"
             android:maxLines="1"/>
 
         <EditText
             android:id="@+id/regis_alamat"
             style="@style/modifiedEditText"
             android:layout_height="wrap_content"
-            android:hint="@string/regis_alamat_hint"/>
+            android:hint="@string/regis_alamat_hint"
+            android:fontFamily="@font/cl_bold"/>
 
         <Spinner
             android:id="@+id/regis_jk"
@@ -48,6 +52,7 @@
             android:id="@+id/regis_email"
             style="@style/modifiedEditText"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/cl_bold"
             android:hint="@string/regis_email_hint"/>
 
         <EditText
@@ -55,7 +60,8 @@
             style="@style/modifiedEditText"
             android:layout_height="wrap_content"
             android:hint="@string/regis_password1_hint"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:fontFamily="@font/cl_bold"/>
 
 
         <TextView
@@ -66,7 +72,8 @@
             android:layout_marginTop="10dp"
             android:text=""
             android:textColor="@android:color/holo_red_dark"
-            android:textSize="@dimen/newsMoreTextSize" />
+            android:textSize="@dimen/newsMoreTextSize"
+            android:fontFamily="@font/cl_bold"/>
 
         <ProgressBar
             android:id="@+id/loading"
@@ -79,7 +86,8 @@
             style="@style/loginButton"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/loginViewsMargin"
-            android:text="Daftar" />
+            android:text="Daftar"
+            android:fontFamily="@font/bebas"/>
 
         <TextView
             style="@style/parent"
@@ -88,6 +96,7 @@
             android:textStyle="bold"
             android:textColor="@color/primaryTextColor"
             android:text="Sudah punya akun ? Login disini"
+            android:fontFamily="@font/cl_bold"
             android:layout_marginTop="@dimen/loginViewsMargin"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

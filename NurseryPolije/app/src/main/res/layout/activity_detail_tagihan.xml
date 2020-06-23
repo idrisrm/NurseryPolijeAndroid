@@ -21,13 +21,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Upload bukti pembayaran"
+            android:text="Upload Bukti Pembayaran"
             android:textAlignment="center"
             android:textColor="@color/putih"
-            android:textSize="18dp"
-            android:textStyle="bold"
+            android:textSize="35dp"
             tools:layout_editor_absoluteX="20dp"
-            tools:layout_editor_absoluteY="0dp" />
+            tools:layout_editor_absoluteY="0dp"
+            android:fontFamily="@font/signatra"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <ImageView
@@ -50,10 +50,12 @@
         android:layout_marginBottom="10dp"
         android:text="Pilih Foto"
         android:textStyle="bold"
+        android:textSize="18sp"
         android:textColor="@color/putih"
         app:layout_constraintBottom_toTopOf="@+id/btnUpload"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/bebas"/>
 
     <TextView
         android:paddingHorizontal="20dp"
@@ -65,7 +67,8 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWarn" />
+        app:layout_constraintTop_toBottomOf="@+id/tvWarn"
+        android:fontFamily="@font/bertina"/>
 
     <TextView
         android:id="@+id/tvWarn"
@@ -73,13 +76,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Pastikan anda Mentransfer nominal sesuai besar tagihan agar pesanan anda bisa diproses"
+        android:text="Pastikan anda mentransfer nominal sesuai besar tagihan agar pesanan anda bisa diproses"
         android:textAlignment="center"
         android:textColor="@color/lowred"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivBukti" />
+        app:layout_constraintTop_toBottomOf="@+id/ivBukti"
+        android:fontFamily="@font/bertina"/>
 
     <Button
         android:id="@+id/btnUpload"
@@ -89,9 +93,11 @@
         android:layout_marginBottom="20dp"
         android:text="Upload Bukti"
         android:textStyle="bold"
+        android:textSize="18sp"
         android:textColor="@color/putih"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/bebas"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

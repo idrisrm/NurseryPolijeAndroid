@@ -52,7 +52,8 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:text="@tools:sample/lorem/random"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                android:fontFamily="@font/bertina"/>
 
             <TextView
                 android:id="@+id/tvDeskripsi"
@@ -71,7 +72,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvHarga"
                 app:layout_constraintVertical_bias="0.0"
-                tools:text="@tools:sample/lorem/random" />
+                tools:text="@tools:sample/lorem/random"
+                android:fontFamily="@font/bertina"/>
 
             <TextView
                 android:id="@+id/tvHarga"
@@ -85,7 +87,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintTop_toBottomOf="@+id/tvNamaBunga"/>
+                app:layout_constraintTop_toBottomOf="@+id/tvNamaBunga"
+                android:fontFamily="@font/bertina"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

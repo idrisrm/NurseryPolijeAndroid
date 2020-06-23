@@ -22,11 +22,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Ubah Profil"
-            android:textStyle="bold"
+            android:fontFamily="@font/signatra"
             android:textColor="@color/putih"
             android:textAlignment="center"
             android:gravity="center"
-            android:textSize="18dp" />
+            android:textSize="35sp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -46,6 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:hint="@string/regis_nama_hint"
+            android:fontFamily="@font/bertina"
             app:layout_constraintTop_toBottomOf="@+id/btn_edit_foto"
             tools:layout_editor_absoluteX="0dp">
 
@@ -56,6 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/regis_alamat_hint"
+            android:fontFamily="@font/bertina"
             app:layout_constraintTop_toBottomOf="@+id/edit_nama"
             tools:layout_editor_absoluteX="0dp">
 
@@ -65,8 +67,8 @@
             android:id="@+id/edit_notel"
             android:layout_width="221dp"
             android:layout_height="wrap_content"
-
             android:hint="@string/regis_notel_hint"
+            android:fontFamily="@font/bertina"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -95,6 +97,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="8dp"
             android:text="Ganti Foto Profile"
+            android:fontFamily="@font/cl_bold"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="18sp"
@@ -131,7 +134,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_edit" />
+        app:layout_constraintTop_toBottomOf="@+id/layout_edit"
+        android:fontFamily="@font/bebas"/>
 
     <TextView
         android:id="@+id/pesan"
@@ -145,5 +149,6 @@
         android:textSize="@dimen/newsMoreTextSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/simpan" />
+        app:layout_constraintTop_toBottomOf="@+id/simpan"
+        android:fontFamily="@font/cl_bold"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

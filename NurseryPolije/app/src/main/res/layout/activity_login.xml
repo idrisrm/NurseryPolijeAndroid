@@ -41,7 +41,9 @@
                     style="@style/headerText"
                     android:layout_gravity="center"
                     android:text="Nursery Polije"
-                    android:layout_marginTop="40dp"/>
+                    android:textSize="50sp"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="@font/signatra"/>
                 <include
                     layout="@layout/layout_login"/>
             </LinearLayout>

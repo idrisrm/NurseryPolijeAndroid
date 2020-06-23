@@ -34,10 +34,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/imgUser"
-            android:text=""
             android:layout_marginStart="65dp"
             android:layout_marginTop="60dp"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="@font/bertina"
             android:textColor="@color/white"
             android:textSize="22sp" />
 
@@ -49,7 +48,7 @@
             android:layout_alignStart="@+id/imgUser"
             android:layout_marginStart="65dp"
             android:layout_marginTop="90dp"
-            android:fontFamily="sans-serif"
+            android:fontFamily="@font/bertina"
             android:textAllCaps="true"
             android:textColor="@color/address"
             android:textSize="14sp" />
@@ -115,6 +114,7 @@
             android:layout_height="wrap_content"
             android:text="Pesanan Saya"
             android:background="#ffffff"
+            android:fontFamily="@font/cl_bold"
             android:padding="5dp"
             android:drawablePadding="10dp"
             android:drawableLeft="@drawable/ic_pesanan"/>
@@ -128,8 +128,7 @@
             android:id="@+id/lv_pesanan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ffffff"
-            />
+            android:background="#ffffff" />
 
     </LinearLayout>
 
@@ -145,6 +144,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Fitur lainnya"
+            android:fontFamily="@font/cl_bold"
             android:background="#ffffff"
             android:padding="5dp"
             android:drawablePadding="10dp"
