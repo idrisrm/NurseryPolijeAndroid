@@ -18,6 +18,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.nurserypolije.config.restServer;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,8 +36,7 @@ public class LupaPassword extends AppCompatActivity {
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     SessionManager sessionManager;
-    //String Url = "http://192.168.43.11/nuporyV2/Justify/rest_ci/index.php/Auth/lupa";
-    String Url = "http://192.168.18.18/nuporyV2/Justify/rest_ci/index.php/Auth/lupa"; //ip sayyid
+    String Url = restServer.URL_LUPA_PASSWORD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

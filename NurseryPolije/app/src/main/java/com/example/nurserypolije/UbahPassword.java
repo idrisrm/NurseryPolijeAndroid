@@ -63,13 +63,13 @@ public class UbahPassword extends AppCompatActivity {
         });
 
 
+
         simpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 cekform();
                 if(cek)
                 {
-
                     ubahpass();
 //                  Intent pindah = new Intent(UbahPassword.this, UbahProfile.class);
 //                  startActivity(pindah);
@@ -79,15 +79,15 @@ public class UbahPassword extends AppCompatActivity {
             }
         });
 
+        //cek apakah sudah login atau belum
+        sessionManager.checkLogin();
 
         //mengambil email dari session manager
         HashMap<String, String> user = sessionManager.getUserDetail();
         email = user.get(sessionManager.EMAIL);
 
-        sessionManager.checkLogin();
+
     }
-
-
 
 
     //function cek form

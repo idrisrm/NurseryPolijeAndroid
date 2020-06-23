@@ -168,7 +168,6 @@
             tools:ignore="MissingConstraints"
             android:fontFamily="@font/bebas"/>
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

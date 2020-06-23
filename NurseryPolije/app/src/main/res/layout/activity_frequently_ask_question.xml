@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".FrequentlyAskQuestion">
 
+
     <ScrollView
         style="@style/parent">
         <RelativeLayout
@@ -16,6 +17,7 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
                 android:weightSum="12">
+
 
                 <LinearLayout
                     style="@style/parent"
@@ -29,6 +31,7 @@
                         android:contentDescription="login background"
                         android:src="@drawable/ic_login_bk" />
 
+
                 </LinearLayout>
             </LinearLayout>
             <TextView
@@ -41,6 +44,7 @@
 
 
         </RelativeLayout>
+
     </ScrollView>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -48,5 +52,6 @@
         android:layout_height="match_parent"
         android:id="@+id/recyle"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
 
 </LinearLayout>

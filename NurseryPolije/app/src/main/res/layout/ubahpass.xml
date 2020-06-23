@@ -6,64 +6,131 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent">
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutpasslama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:passwordToggleEnabled="true">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pslama"
+            style="@style/modifiedEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/bertina"
+            android:hint="@string/password_lama1"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
-<EditText
-    android:id="@+id/pslama"
-    style="@style/modifiedEditText"
-    android:layout_width="287dp"
-    android:layout_height="55dp"
-    android:ems="10"
-    android:inputType="text"
-    android:text="Password Lama"
-    tools:ignore="MissingConstraints"
-    tools:layout_editor_absoluteX="62dp"
-    tools:layout_editor_absoluteY="231dp" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutpassbaru"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutpasslama"
+        app:passwordToggleEnabled="true">
 
-<EditText
-    android:id="@+id/psbaru"
-    style="@style/modifiedEditText"
-    android:layout_width="287dp"
-    android:layout_height="55dp"
-    android:ems="10"
-    android:inputType="text"
-    android:text="Password Baru"
-    tools:ignore="MissingConstraints"
-    tools:layout_editor_absoluteX="62dp"
-    tools:layout_editor_absoluteY="308dp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/psbaru"
+            style="@style/modifiedEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/bertina"
+            android:hint="@string/password_baru1"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutkonfir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutpassbaru"
+        app:passwordToggleEnabled="true">
 
-<EditText
-    android:id="@+id/knfir"
-    style="@style/modifiedEditText"
-    android:layout_width="287dp"
-    android:layout_height="55dp"
-    android:ems="10"
-    android:inputType="text"
-    android:text="Konfirmasi Password"
-    tools:ignore="MissingConstraints"
-    tools:layout_editor_absoluteX="62dp"
-    tools:layout_editor_absoluteY="385dp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/konfir"
+            style="@style/modifiedEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/bertina"
+            android:hint="@string/konfirmasi_password1"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-<Button
-    android:id="@+id/simp"
-    android:layout_width="202dp"
-    android:layout_height="55dp"
-    android:layout_marginBottom="156dp"
-    android:background="@drawable/custombutton"
-    android:text="Simpan"
-    app:layout_constraintBottom_toBottomOf="parent"
-    tools:ignore="MissingConstraints"
-    tools:layout_editor_absoluteX="104dp" />
+    <TextView
+        android:id="@+id/pesan4"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Pastikan password baru anda berbeda dengan password yg sebelumnya."
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/cl_bold"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-<Button
-    android:id="@+id/btl"
-    android:layout_width="202dp"
-    android:layout_height="52dp"
-    android:layout_marginBottom="80dp"
-    android:background="@drawable/custombutton"
-    android:text="Batal"
-    app:layout_constraintBottom_toBottomOf="parent"
-    tools:ignore="MissingConstraints"
-    tools:layout_editor_absoluteX="104dp" />
+    <TextView
+        android:id="@+id/pesan"
+        style="@style/viewParent"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/cl_bold"
+        android:paddingHorizontal="20dp"
+        android:text=""
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="@dimen/newsMoreTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="427dp" />
+
+    <Button
+        android:id="@+id/simp"
+        android:layout_width="150dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button1"
+        android:text="Simpan"
+        android:textColor="@color/putih"
+        app:layout_constraintBottom_toTopOf="@+id/btl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/bebas"/>
+
+    <Button
+        android:id="@+id/btl"
+        android:layout_width="150dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/button1"
+        android:textColor="@color/putih"
+        android:text="Batal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/bebas"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

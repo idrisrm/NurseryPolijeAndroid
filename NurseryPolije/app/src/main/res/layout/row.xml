@@ -42,7 +42,7 @@
                 android:textColor="@color/gray"
                 />
         </RelativeLayout>
-        
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
