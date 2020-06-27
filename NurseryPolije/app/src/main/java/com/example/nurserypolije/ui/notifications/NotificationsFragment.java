@@ -1,5 +1,6 @@
 package com.example.nurserypolije.ui.notifications;
 import com.example.nurserypolije.DikemasActivity;
+import com.example.nurserypolije.DikirimActivity;
 import com.example.nurserypolije.FrequentlyAskQuestion;
 import com.example.nurserypolije.KeranjangActivity;
 import com.example.nurserypolije.Kritik;
@@ -108,6 +109,9 @@ public class NotificationsFragment extends Fragment {
                 }else if (dipilih == "Dikemas"){
                     Intent dikemas = new Intent(getActivity(), DikemasActivity.class);
                     startActivity(dikemas);
+                }else if (dipilih == "Dikirim"){
+                    Intent dikirim = new Intent(getActivity(), DikirimActivity.class);
+                    startActivity(dikirim);
                 }
 
             }
