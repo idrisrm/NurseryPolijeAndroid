@@ -30,15 +30,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Kritik extends AppCompatActivity {
-    EditText kritik;
+    EditText  Email, kritik;
     TextView pesan;
     Button batal, kirim;
     Boolean cek;
-    String email, Kritik;
+    String nama, Kritik;
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     SessionManager sessionManager;
     String Url = restServer.URL_KRITIK;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,7 +87,10 @@ public class Kritik extends AppCompatActivity {
 
         //mengambil email dari session manager
         HashMap<String, String> user = sessionManager.getUserDetail();
-        email = user.get(sessionManager.EMAIL);
+        nama = user.get(sessionManager.NAMA);
+
+        //cek sudah login atau belum
+        sessionManager.checkLogin();
     }
 
     //Fungsi Kirim Kritik
@@ -102,7 +106,7 @@ public class Kritik extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
-                            String success = jsonObject.getString("success");
+
                             String pesan = jsonObject.getString("message");
 
                             Toast.makeText(Kritik.this, pesan.toString(), Toast.LENGTH_SHORT).show();
@@ -127,7 +131,7 @@ public class Kritik extends AppCompatActivity {
         {
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-                params.put("email", email);
+                params.put("nama", nama);
                 params.put("isi_kritik", Kritik);
                 return params;
             }
