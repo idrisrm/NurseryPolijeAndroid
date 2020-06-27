@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Kritik extends AppCompatActivity {
-    EditText Email, kritik;
+    EditText kritik;
     TextView pesan;
     Button batal, kirim;
     Boolean cek;
