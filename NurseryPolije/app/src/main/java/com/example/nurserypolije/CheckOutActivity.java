@@ -2,6 +2,7 @@ package com.example.nurserypolije;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -32,7 +33,7 @@ public class CheckOutActivity extends AppCompatActivity {
     TextView tvTotalHarga;
     SessionManager sessionManager;
     EditText etAlamat;
-    Button CheckOut;
+    Button kembali, CheckOut;
     Boolean cek;
 
     @Override
@@ -51,6 +52,16 @@ public class CheckOutActivity extends AppCompatActivity {
         //alamat
         etAlamat = findViewById(R.id.etAlamat);
 //        alamat = etAlamat.getText().toString().trim();
+
+        //kembali
+        kembali = findViewById(R.id.btnKembaliCheckOut);
+        kembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent kembali = new Intent(CheckOutActivity.this, KeranjangActivity.class);
+                startActivity(kembali);
+            }
+        });
 
         //CheckOut
         CheckOut = findViewById(R.id.btnCheckOutCheckOut);

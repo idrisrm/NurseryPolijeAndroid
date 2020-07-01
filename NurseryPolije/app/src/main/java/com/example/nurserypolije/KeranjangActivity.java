@@ -42,7 +42,7 @@ public class KeranjangActivity extends AppCompatActivity {
     List<ModelKeranjang> mItems;
     RecyclerView recyclerView;
     KeranjangAdapter mAdapter;
-    Button checkout;
+    Button kembali, checkout;
     ConstraintLayout aksi;
 
     private ArrayList<ModelKeranjang> arrayList;
@@ -59,6 +59,17 @@ public class KeranjangActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(mAdapter);
+
+
+        //kembali
+        kembali = findViewById(R.id.btnKembaliKeranjang);
+        kembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent kembali = new Intent(KeranjangActivity.this, MainActivity.class);
+                startActivity(kembali);
+            }
+        });
 
         //checkout
         checkout = findViewById(R.id.btnCheckOutKeranjang);
