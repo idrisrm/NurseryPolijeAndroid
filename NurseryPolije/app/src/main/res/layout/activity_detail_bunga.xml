@@ -104,6 +104,29 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvHargaBunga"
                 android:fontFamily="@font/bertina"/>
 
+            <TextView
+                android:id="@+id/tvJumlahBeli"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:fontFamily="@font/bertina"
+                android:text="Jumlah Beli :"
+                app:layout_constraintStart_toStartOf="@+id/tvStok"
+                app:layout_constraintTop_toBottomOf="@+id/tvStok"/>
+
+            <EditText
+                android:id="@+id/etJumlahBeli"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:numeric="integer"
+                app:layout_constraintStart_toStartOf="@+id/tvJumlahBeli"
+                app:layout_constraintTop_toBottomOf="@+id/tvJumlahBeli"/>
 
             <TextView
                 android:id="@+id/tvDeskripsi"
@@ -117,7 +140,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvStok"
+                app:layout_constraintTop_toBottomOf="@+id/etJumlahBeli"
                 android:fontFamily="@font/bertina"/>
 
             <TextView
@@ -139,6 +162,31 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/constraintLayout5"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/scrollView"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/constraintLayout4"-->
+<!--        >-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Jumlah Beli : "-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"/>-->
+<!--        <EditText-->
+<!--            android:id="@+id/jumlahBeli"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"/>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"

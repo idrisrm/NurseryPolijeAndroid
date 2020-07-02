@@ -2,8 +2,10 @@ package com.example.nurserypolije;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -31,6 +33,7 @@ import java.util.Map;
 
 public class DetailBunga extends AppCompatActivity {
 TextView namaBunga, Deskripsi, Stok, hargaBunga;
+EditText JumlahBeli;
 ProgressBar progressBar;
 ImageView fotoBunga;
 SessionManager sessionManager;
@@ -38,6 +41,7 @@ String url = restServer.URL_BERANDA;
 String urlkeranjang = restServer.URL_KERANJANG;
 String idBunga, email, id_status_transaksi, jumlah, totalharga;
 Button keranjang, batal;
+Boolean cek;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +64,9 @@ Button keranjang, batal;
         HashMap<String, String> user = sessionManager.getUserDetail();
         email = user.get(sessionManager.EMAIL);
         id_status_transaksi = "1";
-        jumlah = "1";
+
+        JumlahBeli = findViewById(R.id.etJumlahBeli);
+
 
         //detail bunga
         loadJSON();
@@ -68,7 +74,12 @@ Button keranjang, batal;
         keranjang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                keranjang();
+                cekField();
+                if (cek){
+                    keranjang();
+                }else{
+                    Toast.makeText(DetailBunga.this, "Harap Isi Jumlah Bunga Yang Ingin Anda Beli Dengan Benar", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -81,6 +92,16 @@ Button keranjang, batal;
         });
     }
 
+    //cek field kosong atau tidak
+    public void cekField()
+    {
+        jumlah = JumlahBeli.getText().toString().trim();
+        if (TextUtils.isEmpty(jumlah)){
+            cek = false;
+        }else{
+            cek = true;
+    }
+    }
 
     private void loadJSON() {
         StringRequest sendData = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {

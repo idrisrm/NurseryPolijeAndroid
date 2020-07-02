@@ -2,6 +2,7 @@ package com.example.nurserypolije;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +13,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class TagihanAdapter extends RecyclerView.Adapter<TagihanAdapter.HolderData> {
     private List<ModelTagihan> mItems;
     private Context context;
     private ArrayList<ModelTagihan> modelTagihan;
+    Integer miliSecond;
 
     TagihanAdapter(ArrayList<ModelTagihan> arrayList) {
         this.modelTagihan = arrayList;
@@ -52,14 +57,34 @@ public class TagihanAdapter extends RecyclerView.Adapter<TagihanAdapter.HolderDa
         });
 
         try {
+
+            miliSecond = modelTagihan.getTanggal_transaksi();
             holder.id_transaksi = modelTagihan.getId_transaksi();
-            holder.tanggalTransaksi.setText("Tanggal Transaksi : " + modelTagihan.getTanggal_transaksi());
+            holder.tanggalTransaksi.setText("Tanggal Transaksi : " + getDate(miliSecond));
             holder.alamatPengiriman.setText(modelTagihan.getAlamat_pengiriman());
             holder.total.setText(modelTagihan.getTotal());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
+
+//    private String getDate(long milliSeconds) {
+//        // Create a DateFormatter object for displaying date in specified
+//        // format.
+//        SimpleDateFormat formatter = new SimpleDateFormat("dd-mm-yyyy");
+//        // Create a calendar object that will convert the date and time value in
+//        // milliseconds to date.
+//        Calendar calendar = Calendar.getInstance(Locale.ENGLISH);
+//        calendar.setTimeInMillis((int) milliSeconds * 1000L);
+//        String date = DateFormat.format("dd-MM-yyyy hh:mm:ss", calendar).toString();
+//        return formatter.format(calendar.getTime());
+//    }
+private String getDate(long time) {
+    Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+    cal.setTimeInMillis(time * 1000);
+    String date = DateFormat.format("dd-MM-yyyy", cal).toString();
+    return date;
+}
 
     @Override
     public int getItemCount() {

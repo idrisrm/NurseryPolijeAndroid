@@ -79,7 +79,7 @@ public class TagihanActivity extends AppCompatActivity {
                             ModelTagihan md = new ModelTagihan();
 
                             md.setId_transaksi(object.getString("id_transaksi"));
-                            md.setTanggal_transaksi(object.getString("tanggal_transaksi"));
+                            md.setTanggal_transaksi(object.getInt("tanggal_transaksi"));
                             md.setAlamat_pengiriman(object.getString("alamat_pengiriman"));
                             md.setTotal(object.getString("total"));
                             mItems.add(md);

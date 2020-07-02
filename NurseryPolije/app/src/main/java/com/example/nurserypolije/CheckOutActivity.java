@@ -150,6 +150,8 @@ public class CheckOutActivity extends AppCompatActivity {
                     String message = jsonObject.getString("message");
                     if (success.equals("1")) {
                         Toast.makeText(CheckOutActivity.this, "Berhasil", Toast.LENGTH_SHORT).show();
+                        Intent k = new Intent(CheckOutActivity.this, TagihanActivity.class);
+                        startActivity(k);
                     } else {
 //                        progressDialog.dismiss();
                         Toast.makeText(CheckOutActivity.this, message.toString(), Toast.LENGTH_SHORT).show();

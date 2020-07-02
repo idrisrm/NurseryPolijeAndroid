@@ -2,7 +2,7 @@ package com.example.nurserypolije;
 
 public class ModelTagihan {
     String id_transaksi;
-    String tanggal_transaksi;
+    Integer tanggal_transaksi;
     String alamat_pengiriman;
     String total;
 
@@ -14,11 +14,11 @@ public class ModelTagihan {
         this.id_transaksi = id_transaksi;
     }
 
-    public String getTanggal_transaksi() {
+    public Integer getTanggal_transaksi() {
         return tanggal_transaksi;
     }
 
-    public void setTanggal_transaksi(String tanggal_transaksi) {
+    public void setTanggal_transaksi(Integer tanggal_transaksi) {
         this.tanggal_transaksi = tanggal_transaksi;
     }
 
